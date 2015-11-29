@@ -1,0 +1,12 @@
+src/
+test/
+scripts/
+*.log
+npm-debug.log*
+.babelrc
+.editorconfig
+.eslintignore
+.eslintrc.yml
+.gitignore
+.npmignore
+.travis.yml
