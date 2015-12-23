@@ -1,6 +1,7 @@
-[![npm version](https://badge.fury.io/js/sass-resources-loader.svg)](https://badge.fury.io/js/sass-resources-loader)
 
 # sass-resources-loader
+
+[![npm version](https://badge.fury.io/js/sass-resources-loader.svg)](https://badge.fury.io/js/sass-resources-loader)
 
 This loader will `@import` your SASS resources into every `require`d SASS module. So you can use your shared variables & mixins across all SASS styles without manually importing them in each file. Made to work with CSS Modules!
 
