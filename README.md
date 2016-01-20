@@ -3,7 +3,7 @@
 
 [![npm version](https://badge.fury.io/js/sass-resources-loader.svg)](https://badge.fury.io/js/sass-resources-loader)
 
-NEWS
+## NEWS
 
 * We have one open issue on fixing caching for Webpack. Any volunteers? [#4](https://github.com/shakacode/sass-resources-loader/issues/4)
 * Even without this fix, we're **LOVING** this in combination with CSS modules!
