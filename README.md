@@ -1,15 +1,9 @@
 
 # sass-resources-loader
 
-[![npm version](https://badge.fury.io/js/sass-resources-loader.svg)](https://badge.fury.io/js/sass-resources-loader)
-
-## NEWS
-
-* We have one open issue on fixing caching for Webpack. Any volunteers? [#4](https://github.com/shakacode/sass-resources-loader/issues/4)
-* Even without this fix, we're **LOVING** this in combination with CSS modules!
-
----------
-
+[![npm version](https://img.shields.io/npm/v/sass-resources-loader.svg?style=flat-square)](https://www.npmjs.com/package/sass-resources-loader)
+[![dependencies status](https://img.shields.io/gemnasium/shakacode/sass-resources-loader.svg?style=flat-square)](https://gemnasium.com/shakacode/sass-resources-loader)
+[![license](https://img.shields.io/npm/l/sass-resources-loader.svg?style=flat-square)](https://www.npmjs.com/package/sass-resources-loader)
 
 This loader will `@import` your SASS resources into every `required` SASS module. So you can use your shared variables & mixins across all SASS styles without manually importing them in each file. Made to work with CSS Modules!
 
