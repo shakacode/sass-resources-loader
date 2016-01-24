@@ -74,7 +74,15 @@ render() {
 }
 ```
 
-## Example and Related Libraries:
+## Contributing
+This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](CODE_OF_CONDUCT.md).
+
+See [Contributing](CONTRIBUTING.md) to get started.
+
+## License
+MIT.
+
+## Example and Related Libraries
 
 * [react-webpack-rails-tutorial](https://github.com/shakacode/react-webpack-rails-tutorial/), live example at [www.reactrails.com](http://www.reactrails.com/).
 * [bootstrap-loader](https://github.com/shakacode/bootstrap-loader/)
