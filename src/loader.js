@@ -1,11 +1,19 @@
 /* eslint func-names: 0 */
 
+import fs from 'fs';
+import path from 'path';
+import async from 'async';
+
+import processResources from './utils/processResources';
 import isArrayOfStrings from './utils/isArrayOfStrings';
-import resolveResources from './utils/resolveResources';
 import logger from './utils/logger';
 
 module.exports = function(source) {
-  if (this.cacheable) this.cacheable();
+  const webpack = this;
+
+  if (webpack.cacheable) webpack.cacheable();
+
+  const callback = webpack.async();
 
   global.__DEBUG__ = (
     process.env.DEBUG === 'sass-resources-loader' || process.env.DEBUG === '*'
@@ -13,57 +21,59 @@ module.exports = function(source) {
 
   logger.debug(`Hey, we're in DEBUG mode! Yabba dabba doo!`);
 
-  logger.debug('Context:', this.context);
+  const resourcesLocation = webpack.options.sassResources;
+  const moduleContext = webpack.context;
+  const webpackConfigContext = webpack.options.context;
 
-  const resources = this.options.sassResources;
+  logger.debug('Module context:', moduleContext);
+  logger.debug('Webpack config context:', webpackConfigContext);
 
-  if (!resources) {
-    throw new Error(`
+  if (!resourcesLocation) {
+    const error = new Error(`
       Could not find sassResources property.
       Make sure it's defined in your webpack config.
     `);
+
+    return callback(error);
   }
 
-  logger.debug('sassResources:', resources);
+  logger.debug('sassResources:', resourcesLocation);
 
-  const resourcesIsString = typeof resources === 'string';
-  const resourcesIsArrayOfStrings = isArrayOfStrings(resources);
+  const resourcesIsString = typeof resourcesLocation === 'string';
+  const resourcesIsArrayOfStrings = isArrayOfStrings(resourcesLocation);
 
   logger.debug('sassResources is String:', resourcesIsString);
   logger.debug('sassResources is Array of Strings:', resourcesIsArrayOfStrings);
 
   if (!resourcesIsString && !resourcesIsArrayOfStrings) {
-    throw new Error(`
+    const error = new Error(`
       Looks like sassResources property has wrong type.
       Make sure it's String or Array of Strings.
     `);
-  }
 
-  const result = [];
+    return callback(error);
+  }
 
   if (resourcesIsString) {
-    const resourcesImport = resolveResources(resources, this);
-    logger.debug('Resources:', resourcesImport || '**not found**');
+    const file = path.resolve(webpackConfigContext, resourcesLocation);
+    webpack.addDependency(file);
 
-    result.push(resourcesImport);
-  } else {
-    resources.forEach(resource => {
-      const resourcesImport = resolveResources(resource, this);
-      logger.debug('Resources:', resourcesImport || '**not found**');
-
-      result.push(resourcesImport);
+    fs.readFile(file, 'utf8', (error, resources) => {
+      processResources(error, resources, source, moduleContext, callback);
     });
+  } else {
+    const files = resourcesLocation.map(resource => {
+      const file = path.resolve(webpackConfigContext, resource);
+      webpack.addDependency(file);
+      return file;
+    });
+
+    async.map(
+      files,
+      (file, cb) => fs.readFile(file, 'utf8', cb),
+      (error, resources) => {
+        processResources(error, resources, source, moduleContext, callback);
+      }
+    );
   }
-
-  result.push(source);
-
-  const resultOutput = (
-    result
-      .map(fragment => fragment + '\n')
-      .join('')
-  );
-
-  logger.debug('Output:', '\n', resultOutput);
-
-  return resultOutput;
 };
