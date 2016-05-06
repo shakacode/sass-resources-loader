@@ -30,7 +30,9 @@ $section-width: 700px;
 }
 ```
 
-**NB!** Do not include anything that will be actually rendered in CSS, because it will be added to every imported SASS file.
+**NB!**
+* Do not include anything that will be actually rendered in CSS, because it will be added to every imported SASS file.
+* Do not use SASS `@import` inside resources files. Add imported files directly in `sassResources` array in webpack config instead.
 
 Provide path to the file and apply loader in webpack config:
 
