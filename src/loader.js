@@ -5,8 +5,8 @@ import path from 'path';
 import async from 'async';
 
 import processResources from './utils/processResources';
-import isArrayOfStrings from './utils/isArrayOfStrings';
 import logger from './utils/logger';
+import parseResources from './utils/parseResources';
 
 module.exports = function(source) {
   const webpack = this;
@@ -21,7 +21,7 @@ module.exports = function(source) {
 
   logger.debug(`Hey, we're in DEBUG mode! Yabba dabba doo!`);
 
-  const resourcesLocation = webpack.options.sassResources;
+  const resourcesLocation = parseResources(webpack.options.sassResources);
   const moduleContext = webpack.context;
   const webpackConfigContext = webpack.options.context;
 
@@ -39,13 +39,7 @@ module.exports = function(source) {
 
   logger.debug('sassResources:', resourcesLocation);
 
-  const resourcesIsString = typeof resourcesLocation === 'string';
-  const resourcesIsArrayOfStrings = isArrayOfStrings(resourcesLocation);
-
-  logger.debug('sassResources is String:', resourcesIsString);
-  logger.debug('sassResources is Array of Strings:', resourcesIsArrayOfStrings);
-
-  if (!resourcesIsString && !resourcesIsArrayOfStrings) {
+  if (!resourcesLocation.length) {
     const error = new Error(`
       Looks like sassResources property has wrong type.
       Make sure it's String or Array of Strings.
@@ -54,26 +48,17 @@ module.exports = function(source) {
     return callback(error);
   }
 
-  if (resourcesIsString) {
-    const file = path.resolve(webpackConfigContext, resourcesLocation);
+  const files = resourcesLocation.map(resource => {
+    const file = path.resolve(webpackConfigContext, resource);
     webpack.addDependency(file);
+    return file;
+  });
 
-    fs.readFile(file, 'utf8', (error, resources) => {
+  async.map(
+    files,
+    (file, cb) => fs.readFile(file, 'utf8', cb),
+    (error, resources) => {
       processResources(error, resources, source, moduleContext, callback);
-    });
-  } else {
-    const files = resourcesLocation.map(resource => {
-      const file = path.resolve(webpackConfigContext, resource);
-      webpack.addDependency(file);
-      return file;
-    });
-
-    async.map(
-      files,
-      (file, cb) => fs.readFile(file, 'utf8', cb),
-      (error, resources) => {
-        processResources(error, resources, source, moduleContext, callback);
-      }
-    );
-  }
+    }
+  );
 };
