@@ -76,6 +76,20 @@ render() {
 }
 ```
 
+### Glob pattern matching
+You can specify glob patterns to match your all of your files in the same directory.
+```js
+// Specify a single path
+sassResources: './path/to/resources/**/*.scss', // will match all files in folder and subdirectories
+// or an array of paths
+sassResources: [ './path/to/resources/**/*.scss', './path/to/another/**/*.scss' ]
+```
+
+Note that sass-resources-loader will resolve your files in order. If you want your variables to be accessed across all of your mixins you should specify them in first place.
+```js
+sassResources: [ './path/to/variables/vars.scss', './path/to/mixins/**/*.scss' ]
+```
+
 ## Contributing
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](CODE_OF_CONDUCT.md).
 
