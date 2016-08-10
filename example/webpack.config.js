@@ -46,9 +46,6 @@ module.exports = {
 
   postcss: [autoprefixer],
 
-  sassResources: [
-    './app/assets/styles/variables.scss',
-    './app/assets/styles/mixins.scss',
-  ],
+  sassResources: './app/assets/styles/**/*.scss',
 
 };
