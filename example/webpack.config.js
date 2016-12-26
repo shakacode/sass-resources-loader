@@ -17,7 +17,7 @@ module.exports = {
 
   devtool: '#cheap-module-eval-source-map',
 
-  resolve: { extensions: ['', '.js', '.jsx'] },
+  resolve: { extensions: ['.js', '.jsx'] },
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -25,27 +25,34 @@ module.exports = {
   ],
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
-        loaders: ['babel'],
+        use: 'babel-loader',
         exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
-        loaders: [
-          'style',
-          'css?modules&importLoaders=3&localIdentName=[name]__[local]__[hash:base64:5]',
-          'postcss',
-          'sass',
-          'sass-resources',
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 3,
+              localIdentName: '[path]__[local]__[hash:base64:5]',
+            },
+          },
+          'postcss-loader',
+          'sass-loader',
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              resources: './app/assets/styles/**/*.scss',
+            },
+          },
         ],
       },
     ],
   },
-
-  postcss: [autoprefixer],
-
-  sassResources: './app/assets/styles/**/*.scss',
-
 };

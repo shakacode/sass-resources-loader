@@ -3,10 +3,11 @@
 import fs from 'fs';
 import path from 'path';
 import async from 'async';
+import loaderUtils from 'loader-utils';
 
 import processResources from './utils/processResources';
-import logger from './utils/logger';
 import parseResources from './utils/parseResources';
+import logger from './utils/logger';
 
 module.exports = function(source) {
   const webpack = this;
@@ -15,40 +16,34 @@ module.exports = function(source) {
 
   const callback = webpack.async();
 
-  global.__DEBUG__ = (
-    process.env.DEBUG === 'sass-resources-loader' || process.env.DEBUG === '*'
-  );
+  global.__DEBUG__ = process.env.DEBUG === 'sass-resources-loader' || process.env.DEBUG === '*';
 
   logger.debug(`Hey, we're in DEBUG mode! Yabba dabba doo!`);
 
-  const resourcesLocation = parseResources(webpack.options.sassResources);
+  // TODO: Remove `webpack.options.sassResources` support after first stable webpack@2 release
+  const resourcesFromConfig =
+    webpack.version !== 2
+    ? webpack.options.sassResources
+    : loaderUtils.parseQuery(this.query).resources
+  ;
+  const resourcesLocations = parseResources(resourcesFromConfig);
   const moduleContext = webpack.context;
   const webpackConfigContext = webpack.options.context;
 
   logger.debug('Module context:', moduleContext);
   logger.debug('Webpack config context:', webpackConfigContext);
+  logger.debug('Resources:', resourcesLocations);
 
-  if (!resourcesLocation) {
+  if (!resourcesLocations.length) {
     const error = new Error(`
-      Could not find sassResources property.
-      Make sure it's defined in your webpack config.
+      Something wrong with provided resources.
+      Make sure 'options.resources' is String or Array of Strings.
     `);
 
     return callback(error);
   }
 
-  logger.debug('sassResources:', resourcesLocation);
-
-  if (!resourcesLocation.length) {
-    const error = new Error(`
-      Looks like sassResources property has wrong type.
-      Make sure it's String or Array of Strings.
-    `);
-
-    return callback(error);
-  }
-
-  const files = resourcesLocation.map(resource => {
+  const files = resourcesLocations.map(resource => {
     const file = path.resolve(webpackConfigContext, resource);
     webpack.addDependency(file);
     return file;
