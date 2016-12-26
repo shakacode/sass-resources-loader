@@ -6,12 +6,12 @@ import flattenArray from './flattenArray';
 
 export default locations => {
   if (typeof locations === 'string') {
-    logger.debug('sassResources is String:', true);
+    logger.debug('options.resources is String:', true);
     return glob.sync(locations);
   }
 
   if (isArrayOfStrings(locations)) {
-    logger.debug('sassResources is Array of Strings:', true);
+    logger.debug('options.resources is Array of Strings:', true);
     const paths = locations.map(file => glob.sync(file));
     return flattenArray(paths);
   }
