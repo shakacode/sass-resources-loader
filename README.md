@@ -7,6 +7,9 @@
 
 This loader will `@import` your SASS resources into every `required` SASS module. So you can use your shared variables & mixins across all SASS styles without manually importing them in each file. Made to work with CSS Modules!
 
+## Webpack V2?
+If you are using Webpack v2, then please use 1.2.0-beta.1. Once Webpack v2 is out of beta, we will no longer be making updates for Webpack v1. Please see [PR #16](https://github.com/shakacode/sass-resources-loader/pull/16).
+
 ## Installation
 
 Get it via npm:
