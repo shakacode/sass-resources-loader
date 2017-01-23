@@ -7,8 +7,8 @@ export default function(error, resources, source, module, callback) {
   }
 
   const stringifiedResources = (
-    Array.isArray(resources) ? resources.join('\n') : resources + '\n'
-  );
+    Array.isArray(resources) ? resources.join('\n') : resources
+  ) + '\n';
 
   const output = stringifiedResources + source;
 
