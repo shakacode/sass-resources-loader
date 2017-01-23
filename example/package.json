@@ -7,6 +7,7 @@
   },
   "scripts": {
     "start": "nodemon --watch server.js server.js",
+    "build": "webpack --config webpack.prod.config.js",
     "lint": "eslint --ext .js,.jsx ."
   },
   "authors": [
@@ -47,6 +48,7 @@
     "eslint-config-shakacode": "0.0.1",
     "eslint-plugin-react": "^3.15.0",
     "express": "^4.13.4",
+    "extract-text-webpack-plugin": "2.0.0-beta.5",
     "node-sass": "^4.1.1",
     "nodemon": "^1.8.1",
     "postcss-loader": "^1.2.1",
