@@ -28,7 +28,14 @@ module.exports = function(source) {
   ;
   const resourcesLocations = parseResources(resourcesFromConfig);
   const moduleContext = webpack.context;
-  const webpackConfigContext = webpack.options.context;
+  const webpackConfigContext = webpack.options.context || process.cwd();
+
+  if (!webpack.options || !webpack.options.context) {
+    logger.log(
+      '`options.context` is missing. Using current working directory as a root instead:',
+      process.cwd(),
+    );
+  }
 
   logger.debug('Module context:', moduleContext);
   logger.debug('Webpack config context:', webpackConfigContext);
