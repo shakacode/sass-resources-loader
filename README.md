@@ -71,10 +71,37 @@ $section-width: 700px;
 * Do not include anything that will be actually rendered in CSS, because it will be added to every imported SASS file.
 * Do not use SASS `@import` inside resources files. Add imported files directly in `sassResources` array in webpack config instead.
 
-Provide path to the file and apply loader in webpack config:
+Apply loader in webpack config (`v1.x.x` & `v2.x.x` are supported) and provide path to the file with resources:
 
 ```js
-/* webpack.config.js */
+/* Webpack@2: webpack.config.js */
+
+module: {
+  rules: [
+    // Apply loader
+    {
+      test: /\.scss$/,
+      use: [
+        'style-loader',
+        'css-loader',
+        'postcss-loader',
+        'sass-loader',
+        {
+          loader: 'sass-resources-loader',
+          options: {
+            // Provide path to the file with resources
+            resources: './path/to/resources.scss',
+
+            // Or array of paths
+            resources: ['./path/to/vars.scss', './path/to/mixins.scss']
+          },
+        },
+      ],
+    },
+  ],
+},
+
+/* Webpack@1: webpack.config.js */
 
 module: {
   loaders: [
@@ -87,7 +114,7 @@ module: {
 sassResources: './path/to/resources.scss',
 
 // Or array of paths
-sassResources: [ './path/to/vars.scss', './path/to/mixins.scss' ]
+sassResources: ['./path/to/vars.scss', './path/to/mixins.scss'],
 ```
 
 Now you can use these resources without manually importing them:
@@ -117,14 +144,14 @@ render() {
 You can specify glob patterns to match your all of your files in the same directory.
 ```js
 // Specify a single path
-sassResources: './path/to/resources/**/*.scss', // will match all files in folder and subdirectories
+resources: './path/to/resources/**/*.scss', // will match all files in folder and subdirectories
 // or an array of paths
-sassResources: [ './path/to/resources/**/*.scss', './path/to/another/**/*.scss' ]
+resources: [ './path/to/resources/**/*.scss', './path/to/another/**/*.scss' ]
 ```
 
-Note that sass-resources-loader will resolve your files in order. If you want your variables to be accessed across all of your mixins you should specify them in first place.
+Note that `sass-resources-loader` will resolve your files in order. If you want your variables to be accessed across all of your mixins you should specify them in first place.
 ```js
-sassResources: [ './path/to/variables/vars.scss', './path/to/mixins/**/*.scss' ]
+resources: [ './path/to/variables/vars.scss', './path/to/mixins/**/*.scss' ]
 ```
 
 ## Contributing
