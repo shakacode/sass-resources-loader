@@ -117,6 +117,8 @@ sassResources: './path/to/resources.scss',
 sassResources: ['./path/to/vars.scss', './path/to/mixins.scss'],
 ```
 
+> NOTE: If `webpackConfig.context` is not defined, `process.cwd()` will be used to resolve files with resource.
+
 Now you can use these resources without manually importing them:
 
 ```scss
