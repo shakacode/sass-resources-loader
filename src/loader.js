@@ -24,7 +24,7 @@ module.exports = function(source) {
   const resourcesFromConfig =
     webpack.version !== 2
     ? webpack.options.sassResources
-    : loaderUtils.parseQuery(this.query).resources
+    : (loaderUtils.getOptions(this) || { resources: undefined }).resources
   ;
   const resourcesLocations = parseResources(resourcesFromConfig);
   const moduleContext = webpack.context;
