@@ -43,9 +43,6 @@ For more testimonials, see [Live Projects](https://github.com/shakacode/react_on
 
 ---------------
 
-## Webpack V2?
-If you are using Webpack v2, then please use 1.2.0-beta.1. Once Webpack v2 is out of beta, we will no longer be making updates for Webpack v1. Please see [PR #16](https://github.com/shakacode/sass-resources-loader/pull/16).
-
 ## Installation
 
 Get it via npm:
