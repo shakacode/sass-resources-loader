@@ -10,6 +10,10 @@ export default (error, file, contents, moduleContext, callback) => {
     return callback(error);
   }
 
+  if (!/\.s[ac]ss$/i.test(file)) {
+    return callback(null, contents);
+  }
+
   const rewritten = contents.replace(importRegexp, (entire, single, double, unquoted) => {
     const oldImportPath = single || double || unquoted;
     const absoluteImportPath = path.join(path.dirname(file), oldImportPath);
