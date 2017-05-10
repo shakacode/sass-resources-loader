@@ -1,3 +1,2 @@
-@mixin center-text {
-  text-align: center;
-}
+@import 'mixins/centerText';
+@import 'mixins/fullWidth';

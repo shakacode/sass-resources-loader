@@ -1,7 +1,7 @@
 .hero {
   @include center-text;
+  @include full-width;
   margin-bottom: 50px;
-  width: 100%;
   height: 70vh;
   background-color: $background-color;
   color: $text-color;
