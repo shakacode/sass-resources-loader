@@ -1,5 +1,6 @@
 # Change Log
 ## [Unreleased]
+* Added support for `@import` rules in resource files [#34](https://github.com/shakacode/sass-resources-loader/pull/34) by [coditect](https://github.com/coditect)
 
 ## [1.1.0]
 #### Added
