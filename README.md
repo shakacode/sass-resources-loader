@@ -15,8 +15,6 @@ If you're using this project and you like it, please give us a star! Thanks!
 
 ## Thank you from Justin Gordon and [ShakaCode](http://www.shakacode.com)
 
-Thank you for considering using [React on Rails](https://github.com/shakacode/react_on_rails).
-
 * **Video:** [Front-End Sadness to Happiness: The React on Rails Story](https://www.youtube.com/watch?v=SGkTvKRPYrk): History, motivations, philosophy, and overview.
 * *[Click here for talk slides](http://www.shakacode.com/talks).*
 
@@ -185,8 +183,6 @@ MIT.
 *Identical to top of page*
 
 ## Thank you from Justin Gordon and [ShakaCode](http://www.shakacode.com)
-
-Thank you for considering using [React on Rails](https://github.com/shakacode/react_on_rails).
 
 * **Video:** [Front-End Sadness to Happiness: The React on Rails Story](https://www.youtube.com/watch?v=SGkTvKRPYrk): History, motivations, philosophy, and overview.
 * *[Click here for talk slides](http://www.shakacode.com/talks).*
