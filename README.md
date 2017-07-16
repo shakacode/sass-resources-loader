@@ -48,7 +48,7 @@ Please [Subscribe](https://app.mailerlite.com/webforms/landing/l1d9x5) to keep i
 **[React on Rails](https://github.com/shakacode/react_on_rails)** is ShakaCode's flagship product. We want to make sure you're aware of it!
 
 ### Testimonials
-From Joel Hooks, Co-Founder, Chief Nerd at [egghead.io](https://egghead.io/), January 30, 2017: 
+From Joel Hooks, Co-Founder, Chief Nerd at [egghead.io](https://egghead.io/), January 30, 2017:
 ![2017-01-30_11-33-59](https://cloud.githubusercontent.com/assets/1118459/22443635/b3549fb4-e6e3-11e6-8ea2-6f589dc93ed3.png)
 
 For more testimonials, see [Live Projects](https://github.com/shakacode/react_on_rails/blob/master/PROJECTS.md) and [Kudos](https://github.com/shakacode/react_on_rails/blob/master/KUDOS.md).
@@ -80,7 +80,7 @@ $section-width: 700px;
 
 **NB!**
 * Do not include anything that will be actually rendered in CSS, because it will be added to every imported SASS file.
-* Avoid using SASS `@import` rules inside resources files. Add imported files directly in `sassResources` array in webpack config instead.
+* Avoid using SASS `@import` rules inside resources files as it slows down incremental builds. Add imported files directly in `sassResources` array in webpack config instead.
 
 Apply loader in webpack config (`v1.x.x` & `v2.x.x` are supported) and provide path to the file with resources:
 
