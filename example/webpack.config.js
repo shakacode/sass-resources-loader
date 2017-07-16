@@ -47,7 +47,10 @@ module.exports = {
           {
             loader: 'sass-resources-loader',
             options: {
-              resources: './app/assets/styles/**/*.scss',
+              resources: [
+                './app/assets/styles/variables/*.scss',
+                './app/assets/styles/mixins.scss',
+              ],
             },
           },
         ],

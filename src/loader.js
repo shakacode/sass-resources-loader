@@ -7,6 +7,7 @@ import loaderUtils from 'loader-utils';
 
 import processResources from './utils/processResources';
 import parseResources from './utils/parseResources';
+import rewriteImports from './utils/rewriteImports';
 import logger from './utils/logger';
 
 module.exports = function(source) {
@@ -68,7 +69,11 @@ module.exports = function(source) {
 
   async.map(
     files,
-    (file, cb) => fs.readFile(file, 'utf8', cb),
+    (file, cb) => {
+      fs.readFile(file, 'utf8', (error, contents) => {
+        rewriteImports(error, file, contents, moduleContext, cb);
+      });
+    },
     (error, resources) => {
       processResources(error, resources, source, moduleContext, callback);
     }

@@ -4,7 +4,7 @@
 }
 
 .layout {
+  @include full-width;
   display: block;
   position: relative;
-  width: 100%;
 }
