@@ -4,7 +4,7 @@ import logger from './logger';
 
 const importRegexp = /@import\s+(?:'([^']+)'|"([^"]+)"|([^\s;]+))/g;
 
-export const getNewImportPath = (oldImportPath, absoluteImportPath, moduleContext) => {
+export const getRelativeImportPath = (oldImportPath, absoluteImportPath, moduleContext) => {
   // from node_modules
   if ((/^\~/).test(oldImportPath)) {
     return oldImportPath;
@@ -27,7 +27,8 @@ export default (error, file, contents, moduleContext, callback) => {
     const oldImportPath = single || double || unquoted;
 
     const absoluteImportPath = path.join(path.dirname(file), oldImportPath);
-    const newImportPath = getNewImportPath(oldImportPath, absoluteImportPath, moduleContext);
+    const relImportPath = getRelativeImportPath(oldImportPath, absoluteImportPath, moduleContext);
+    const newImportPath = relImportPath.split(path.sep).join('/');
     logger.debug(`Resources: @import of ${oldImportPath} changed to ${newImportPath}`);
 
     const lastCharacter = entire[entire.length - 1];
