@@ -48,6 +48,8 @@ module.exports = function(source) {
     );
   }
 
+  const rootContext = webpack.options.context || process.cwd();
+
   logger.debug('Module context:', moduleContext);
   logger.debug('Webpack config context:', webpackConfigContext);
   logger.debug('Resources:', resourcesLocations);
@@ -71,7 +73,7 @@ module.exports = function(source) {
     files,
     (file, cb) => {
       fs.readFile(file, 'utf8', (error, contents) => {
-        rewriteImports(error, file, contents, moduleContext, cb);
+        rewriteImports(error, file, contents, moduleContext, rootContext, cb);
       });
     },
     (error, resources) => {
