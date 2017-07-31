@@ -4,7 +4,7 @@ import logger from './logger';
 
 const importRegexp = /@import\s+(?:'([^']+)'|"([^"]+)"|([^\s;]+))/g;
 
-export default (error, file, contents, moduleContext, rootContext, callback) => {
+export default (error, file, contents, moduleContext, callback) => {
   if (error) {
     logger.debug('Resources: **not found**');
     return callback(error);
@@ -17,10 +17,6 @@ export default (error, file, contents, moduleContext, rootContext, callback) => 
   const getNewImportPath = (oldImportPath) => {
     const absoluteImportPath = path.join(path.dirname(file), oldImportPath);
 
-    // if import path starts with / resolve from project root or webpack.context
-    if ((/^\//).test(oldImportPath)) {
-      return path.join(rootContext, oldImportPath);
-    }
     // from node_modules
     if ((/^\~/).test(oldImportPath)) {
       return oldImportPath;
