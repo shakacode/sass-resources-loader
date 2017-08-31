@@ -45,8 +45,8 @@ module.exports = {
               loader: 'sass-resources-loader',
               query: {
                 resources: [
-                  './app/assets/styles/variables/*.scss',
-                  './app/assets/styles/mixins.scss',
+                  path.resolve(__dirname, './app/assets/styles/variables/*.scss'),
+                  path.resolve(__dirname, './app/assets/styles/mixins.scss'),
                 ],
               },
             },

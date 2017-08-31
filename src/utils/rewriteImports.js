@@ -14,11 +14,20 @@ export default (error, file, contents, moduleContext, callback) => {
     return callback(null, contents);
   }
 
+  const getNewImportPath = (oldImportPath) => {
+    const absoluteImportPath = path.join(path.dirname(file), oldImportPath);
+
+    // from node_modules
+    if ((/^\~/).test(oldImportPath)) {
+      return oldImportPath;
+    }
+    return path.relative(moduleContext, absoluteImportPath);
+  };
+
   const rewritten = contents.replace(importRegexp, (entire, single, double, unquoted) => {
     const oldImportPath = single || double || unquoted;
-    const absoluteImportPath = path.join(path.dirname(file), oldImportPath);
-    const newImportPath = path.relative(moduleContext, absoluteImportPath);
 
+    const newImportPath = getNewImportPath(oldImportPath);
     logger.debug(`Resources: @import of ${oldImportPath} changed to ${newImportPath}`);
 
     const lastCharacter = entire[entire.length - 1];
