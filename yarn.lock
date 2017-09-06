@@ -1221,6 +1221,10 @@ escope@^3.3.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
+eslint-config-airbnb@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-airbnb/-/eslint-config-airbnb-1.0.0.tgz#551af91003b0d429f5c7a6ced194d6268649d5ac"
+
 eslint-config-shakacode@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/eslint-config-shakacode/-/eslint-config-shakacode-0.0.1.tgz#fff3532bf4f2c2ca7526f85437eed6771b4ee246"
