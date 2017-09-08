@@ -4,6 +4,14 @@ import logger from './logger';
 
 const importRegexp = /@import\s+(?:'([^']+)'|"([^"]+)"|([^\s;]+))/g;
 
+export const getNewImportPath = (oldImportPath, absoluteImportPath, moduleContext) => {
+  // from node_modules
+  if ((/^\~/).test(oldImportPath)) {
+    return oldImportPath;
+  }
+  return path.relative(moduleContext, absoluteImportPath);
+};
+
 export default (error, file, contents, moduleContext, callback) => {
   if (error) {
     logger.debug('Resources: **not found**');
@@ -14,20 +22,12 @@ export default (error, file, contents, moduleContext, callback) => {
     return callback(null, contents);
   }
 
-  const getNewImportPath = (oldImportPath) => {
-    const absoluteImportPath = path.join(path.dirname(file), oldImportPath);
-
-    // from node_modules
-    if ((/^\~/).test(oldImportPath)) {
-      return oldImportPath;
-    }
-    return path.relative(moduleContext, absoluteImportPath);
-  };
 
   const rewritten = contents.replace(importRegexp, (entire, single, double, unquoted) => {
     const oldImportPath = single || double || unquoted;
 
-    const newImportPath = getNewImportPath(oldImportPath);
+    const absoluteImportPath = path.join(path.dirname(file), oldImportPath);
+    const newImportPath = getNewImportPath(oldImportPath, absoluteImportPath, moduleContext);
     logger.debug(`Resources: @import of ${oldImportPath} changed to ${newImportPath}`);
 
     const lastCharacter = entire[entire.length - 1];

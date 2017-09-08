@@ -4,5 +4,8 @@ extends: eslint-config-shakacode/base
 globals:
   __DEBUG__: true
 
+env:
+  jest: true
+
 ecmaFeatures:
   restParams: true

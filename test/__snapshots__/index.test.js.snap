@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sass-resources-loader resources should include resources 1`] = `
+"$text-color: $ccc;
+
+div {
+    display: block;
+    color: $text-color;
+}
+"
+`;
+
+exports[`sass-resources-loader resources should parse array resources 1`] = `
+"
+
+div {
+    display: block;
+    color: $text-color;
+}
+
+"
+`;
+
+exports[`sass-resources-loader resources should parse resource 1`] = `
+"
+
+div {
+    display: block;
+    color: $text-color;
+}
+
+"
+`;
