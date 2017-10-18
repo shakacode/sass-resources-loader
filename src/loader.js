@@ -22,16 +22,16 @@ module.exports = function(source) {
   logger.debug(`Hey, we're in DEBUG mode! Yabba dabba doo!`);
 
   // TODO: Remove `webpack.options.sassResources` support after first stable webpack@2 release
-  const isWebpack2 = webpack.version === 2;
+  const isModernWebpack = webpack.version >= 2;
   const resourcesFromConfig =
-    isWebpack2
+    isModernWebpack
     ? (loaderUtils.getOptions(this) || {}).resources
     : webpack.options.sassResources;
 
   if (!resourcesFromConfig) {
     const error = new Error(`
       Can't find sass resources in your config.
-      Make sure ${isWebpack2 ? 'loader.options.resources' : 'webpackConfig.sassResources'} exists.
+      Make sure ${isModernWebpack ? 'loader.options.resources' : 'webpackConfig.sassResources'} exists.
     `);
 
     return callback(error);
