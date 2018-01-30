@@ -119,7 +119,7 @@ describe(`sass-resources-loader`, () => {
 
   describe('imports', () => {
     it('should not rewrite path for imports with ~', () => {
-      const getNewImportPath = require('../lib/utils/rewriteImports').getNewImportPath;
+      const getNewImportPath = require('../lib/utils/rewriteImports').getRelativeImportPath;
       expect(getNewImportPath('~/bootstrap', '', '')).toMatch('~/bootstrap');
     });
   });
