@@ -39,9 +39,9 @@ module.exports = function(source) {
 
   const resourcesLocations = parseResources(resourcesFromConfig);
   const moduleContext = webpack.context;
-  const webpackConfigContext = webpack.options.context || process.cwd();
+  const webpackConfigContext = webpack.rootContext || (webpack.options && webpack.options.context) || process.cwd();
 
-  if (!webpack.options || !webpack.options.context) {
+  if (!webpack.rootContext && !webpack.options && !webpack.options.context) {
     logger.log(
       '`options.context` is missing. Using current working directory as a root instead:',
       process.cwd(),
