@@ -12,6 +12,8 @@ This loader will `@import` your SASS resources into every `required` SASS module
 
 Note, this loader is not limited to SASS resources. It supposedly works with less, post-css, etc. per [issue 31](https://github.com/shakacode/sass-resources-loader/issues/31).
 
+### Version 1.3.3 and great supports **Webpack 4**.
+
 -------
 
 If you're using this project and you like it, please give us a star! Thanks!
@@ -32,7 +34,7 @@ My article "[Why Hire ShakaCode?](https://blog.shakacode.com/can-shakacode-help-
 
 If any of this resonates with you, please email me, [justin@shakacode.com](mailto:justin@shakacode.com). I offer a free half-hour project consultation, on anything from React on Rails to any aspect of web or mobile application development for both consumer and enterprise products.
 
-We are **[currently looking to hire](http://www.shakacode.com/about/#work-with-us)** like-minded developers that wish to work on our projects, including [Friends and Guests](https://www.friendsandguests.com).
+We are **[currently looking to hire](http://www.shakacode.com/about/#work-with-us)** like-minded developers that wish to work on our projects, including [Hawaii Chee](https://www.hawaiichee.com).
 
 I appreciate your attention and sharing of these offerings with anybody that we can help. Your support allows me to bring you and your team [front-end happiness in the Rails world](https://www.youtube.com/watch?v=SGkTvKRPYrk).
 
@@ -183,27 +185,3 @@ MIT.
 
 * [react-webpack-rails-tutorial](https://github.com/shakacode/react-webpack-rails-tutorial/), live example at [www.reactrails.com](http://www.reactrails.com/).
 * [bootstrap-loader](https://github.com/shakacode/bootstrap-loader/)
-
-*Identical to top of page*
-
-## Thank you from Justin Gordon and [ShakaCode](http://www.shakacode.com)
-
-* **Video:** [Front-End Sadness to Happiness: The React on Rails Story](https://www.youtube.com/watch?v=SGkTvKRPYrk): History, motivations, philosophy, and overview.
-* *[Click here for talk slides](http://www.shakacode.com/talks).*
-
-We at [ShakaCode](http://www.shakacode.com) are a small, boutique, remote-first application development company. We fund this project by:
-
-* Providing priority support and training for anything related to React + Webpack + Rails in our [Coaching Program](http://www.shakacode.com/work/shakacode-coaching-plan.pdf).
-* Building custom web and mobile (React Native) applications. We typically work with a technical founder or CTO and instantly provide a full development team including designers.
-* Migrating **Angular** + Rails to React + Rails. You can see an example of React on Rails and our work converting Angular to React on Rails at [egghead.io](https://egghead.io/browse/frameworks).
-* Augmenting your team to get your product completed more efficiently and quickly.
-
-My article "[Why Hire ShakaCode?](https://blog.shakacode.com/can-shakacode-help-you-4a5b1e5a8a63#.jex6tg9w9)" provides additional details about our projects.
-
-If any of this resonates with you, please email me, [justin@shakacode.com](mailto:justin@shakacode.com). I offer a free half-hour project consultation, on anything from React on Rails to any aspect of web or mobile application development for both consumer and enterprise products.
-
-We are **[currently looking to hire](http://www.shakacode.com/about/#work-with-us)** like-minded developers that wish to work on our projects, including [Friends and Guests](https://www.friendsandguests.com).
-
-I appreciate your attention and sharing of these offerings with anybody that we can help. Your support allows me to bring you and your team [front-end happiness in the Rails world](https://www.youtube.com/watch?v=SGkTvKRPYrk).
-
-Aloha and best wishes from the ShakaCode team!
