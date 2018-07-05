@@ -185,3 +185,40 @@ MIT.
 
 * [react-webpack-rails-tutorial](https://github.com/shakacode/react-webpack-rails-tutorial/), live example at [www.reactrails.com](http://www.reactrails.com/).
 * [bootstrap-loader](https://github.com/shakacode/bootstrap-loader/)
+
+
+## Example of Webpack Config
+
+```
+  module: {
+    rules: [
+      {
+        test: /\.vue$/,
+        use: 'vue-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [
+          { loader: 'vue-style-loader' },
+          { loader: 'css-loader', options: { sourceMap: true } },
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          { loader: 'vue-style-loader' },
+          { loader: 'css-loader', options: { sourceMap: true } },
+          { loader: 'sass-loader', options: { sourceMap: true } },
+          { loader: 'sass-resources-loader',
+            options: {
+              sourceMap: true,
+              resources: [
+                resolveFromRootDir('src/styles/variables.scss'),
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+  ```
