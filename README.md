@@ -187,7 +187,7 @@ MIT.
 * [bootstrap-loader](https://github.com/shakacode/bootstrap-loader/)
 
 
-## Example of Webpack Config
+## Example of Webpack 4 Config
 
 ```
   module: {
