@@ -173,6 +173,22 @@ Note that `sass-resources-loader` will resolve your files in order. If you want 
 resources: [ './path/to/variables/vars.scss', './path/to/mixins/**/*.scss' ]
 ```
 
+
+### VueJS webpack template
+
+If you wish to use this loader in the [VueJS Webpack template](https://github.com/vuejs-templates/webpack) you need to add the following code in ````build/utils.js```` after line 42 :
+
+```js
+if (loader === 'sass') {
+  loaders.push({
+    loader: 'sass-resources-loader',
+    options: {
+      resources: 'path/to/your/file.scss',
+    },
+  });
+}
+```
+
 ## Contributing
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](CODE_OF_CONDUCT.md).
 
