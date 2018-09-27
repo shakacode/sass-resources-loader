@@ -195,7 +195,7 @@ This project is intended to be a safe, welcoming space for collaboration, and co
 See [Contributing](CONTRIBUTING.md) to get started.
 
 ## License
-MIT.
+_sass-resources-loader_ is available under MIT. See [LICENSE](LICENSE) for more details.
 
 ## Example and Related Libraries
 
