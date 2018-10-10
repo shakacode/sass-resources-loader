@@ -174,7 +174,7 @@ resources: [ './path/to/variables/vars.scss', './path/to/mixins/**/*.scss' ]
 ```
 
 
-### VueJS webpack template
+### VueJS webpack template(vue-cli@2)
 
 If you wish to use this loader in the [VueJS Webpack template](https://github.com/vuejs-templates/webpack) you need to add the following code in ````build/utils.js```` after line 42 :
 
@@ -188,6 +188,33 @@ if (loader === 'sass') {
   });
 }
 ```
+
+### VueJS webpack template(vue-cli@3)
+
+If you are using vue-cli@3, you need create a `vue.config.js` file in your project root(next to package.json). Then, add the following code :
+
+```js
+// vue.config.js
+module.exports = {
+  chainWebpack: config => {
+    const oneOfsMap = config.module.rule('scss').oneOfs.store
+    oneOfsMap.forEach(item => {
+      item
+        .use('sass-resources-loader')
+        .loader('sass-resources-loader')
+        .options({
+          // Provide path to the file with resources
+          resources: './path/to/resources.scss',
+
+          // Or array of paths
+          resources: ['./path/to/vars.scss', './path/to/mixins.scss']
+        })
+        .end()
+    })
+  }
+}
+```
+
 
 ## Contributing
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](CODE_OF_CONDUCT.md).
