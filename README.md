@@ -191,7 +191,7 @@ if (loader === 'sass') {
 
 ### VueJS webpack template(vue-cli@3)
 
-If you are using vue-cli@3, you need create a `vue.config.js` file in your project root(next to package.json).then, add the following code :
+If you are using vue-cli@3, you need create a `vue.config.js` file in your project root(next to package.json). Then, add the following code :
 
 ```js
 // vue.config.js
