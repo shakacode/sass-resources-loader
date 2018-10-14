@@ -8,13 +8,10 @@ This loader will `@import` your SASS resources into every `required` SASS module
 
 Note, this loader is not limited to SASS resources. It supposedly works with less, post-css, etc. per [issue 31](https://github.com/shakacode/sass-resources-loader/issues/31).
 
-### Version 1.3.3 and great supports **Webpack 4**.
+### Supports **Webpack 4**.
 
 # ShakaCode Community
-Please [Subscribe](https://app.mailerlite.com/webforms/landing/l1d9x5) to keep in touch with Justin Gordon and [ShakaCode](http://www.shakacode.com/). Subscribers will also have access to **exclusive content**, including tips and examples.
-
-[![2017-01-31_14-16-56](https://cloud.githubusercontent.com/assets/1118459/22490211/f7a70418-e7bf-11e6-9bef-b3ccd715dbf8.png)](https://app.mailerlite.com/webforms/landing/l1d9x5)
-
+* Please [Subscribe](https://app.mailerlite.com/webforms/landing/l1d9x5) to keep in touch with Justin Gordon and [ShakaCode](http://www.shakacode.com/). Subscribers will also have access to **exclusive content**, including tips and examples.
 * **Slack Room**: [Contact us](mailto:contact@shakacode.com) for an invite to the ShakaCode Slack room!
 * **[forum.shakacode.com](https://forum.shakacode.com)**: Post your questions
 
@@ -43,7 +40,7 @@ $section-width: 700px;
 }
 ```
 
-**NB!**
+## Tips
 * Do not include anything that will be actually rendered in CSS, because it will be added to every imported SASS file.
 * Avoid using SASS `@import` rules inside resources files as it slows down incremental builds. Add imported files directly in `sassResources` array in webpack config instead. If you concerned about location of your resources index, you might want to check out the solution outlined in [this comment](https://github.com/shakacode/sass-resources-loader/issues/46#issuecomment-335211284).
 * If you still want to use SASS `@imports` make sure your paths are relative to the file they defined in (basically, your file with resources), except the ones started with `~` (`~` is resolved to `node_modules` folder).
@@ -133,6 +130,47 @@ Note that `sass-resources-loader` will resolve your files in order. If you want 
 resources: [ './path/to/variables/vars.scss', './path/to/mixins/**/*.scss' ]
 ```
 
+## Examples and Related Libraries
+
+* [react-webpack-rails-tutorial](https://github.com/shakacode/react-webpack-rails-tutorial/), live example at [www.reactrails.com](http://www.reactrails.com/).
+* [bootstrap-loader](https://github.com/shakacode/bootstrap-loader/)
+
+### Example of Webpack 4 Config for Vue
+
+```
+  module: {
+    rules: [
+      {
+        test: /\.vue$/,
+        use: 'vue-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [
+          { loader: 'vue-style-loader' },
+          { loader: 'css-loader', options: { sourceMap: true } },
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          { loader: 'vue-style-loader' },
+          { loader: 'css-loader', options: { sourceMap: true } },
+          { loader: 'sass-loader', options: { sourceMap: true } },
+          { loader: 'sass-resources-loader',
+            options: {
+              sourceMap: true,
+              resources: [
+                resolveFromRootDir('src/styles/variables.scss'),
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+  ```
+
 
 ### VueJS webpack template(vue-cli@2)
 
@@ -175,7 +213,6 @@ module.exports = {
 }
 ```
 
-
 ## Contributing
 This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](CODE_OF_CONDUCT.md).
 
@@ -183,45 +220,3 @@ See [Contributing](CONTRIBUTING.md) to get started.
 
 ## License
 _sass-resources-loader_ is available under MIT. See [LICENSE](LICENSE) for more details.
-
-## Example and Related Libraries
-
-* [react-webpack-rails-tutorial](https://github.com/shakacode/react-webpack-rails-tutorial/), live example at [www.reactrails.com](http://www.reactrails.com/).
-* [bootstrap-loader](https://github.com/shakacode/bootstrap-loader/)
-
-
-## Example of Webpack 4 Config for Vue
-
-```
-  module: {
-    rules: [
-      {
-        test: /\.vue$/,
-        use: 'vue-loader'
-      },
-      {
-        test: /\.css$/,
-        use: [
-          { loader: 'vue-style-loader' },
-          { loader: 'css-loader', options: { sourceMap: true } },
-        ]
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          { loader: 'vue-style-loader' },
-          { loader: 'css-loader', options: { sourceMap: true } },
-          { loader: 'sass-loader', options: { sourceMap: true } },
-          { loader: 'sass-resources-loader',
-            options: {
-              sourceMap: true,
-              resources: [
-                resolveFromRootDir('src/styles/variables.scss'),
-              ]
-            }
-          }
-        ]
-      }
-    ]
-  }
-  ```
