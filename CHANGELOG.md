@@ -15,8 +15,8 @@
 
 For other releases see [GitHub Releases section](https://github.com/shakacode/sass-resources-loader/releases).
 
-[Unreleased]: https://github.com/shakacode/react_on_rails/compare/1.3.4...master
-[1.3.4]: https://github.com/shakacode/react_on_rails/compare/1.3.0...1.3.4
-[1.3.0]: https://github.com/shakacode/react_on_rails/compare/1.2.0...1.3.0
-[1.2.0]: https://github.com/shakacode/react_on_rails/compare/1.1.1...1.2.0
+[Unreleased]: https://github.com/shakacode/react_on_rails/compare/v1.3.4...master
+[1.3.4]: https://github.com/shakacode/react_on_rails/compare/v1.3.0...v1.3.4
+[1.3.0]: https://github.com/shakacode/react_on_rails/compare/v1.2.0...v1.3.0
+[1.2.0]: https://github.com/shakacode/react_on_rails/compare/1.1.0...v1.2.0
 [1.1.0]: https://github.com/shakacode/react_on_rails/compare/1.0.2...1.1.0
