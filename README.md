@@ -14,49 +14,13 @@ Note, this loader is not limited to SASS resources. It supposedly works with les
 
 ### Version 1.3.3 and great supports **Webpack 4**.
 
--------
-
-If you're using this project and you like it, please give us a star! Thanks!
-
-## Thank you from Justin Gordon and [ShakaCode](http://www.shakacode.com)
-
-* **Video:** [Front-End Sadness to Happiness: The React on Rails Story](https://www.youtube.com/watch?v=SGkTvKRPYrk): History, motivations, philosophy, and overview.
-* *[Click here for talk slides](http://www.shakacode.com/talks).*
-
-We at [ShakaCode](http://www.shakacode.com) are a small, boutique, remote-first application development company. We fund this project by:
-
-* Providing priority support and training for anything related to React + Webpack + Rails in our [Coaching Program](http://www.shakacode.com/work/shakacode-coaching-plan.pdf).
-* Building custom web and mobile (React Native) applications. We typically work with a technical founder or CTO and instantly provide a full development team including designers.
-* Migrating **Angular** + Rails to React + Rails. You can see an example of React on Rails and our work converting Angular to React on Rails at [egghead.io](https://egghead.io/browse/frameworks).
-* Augmenting your team to get your product completed more efficiently and quickly.
-
-My article "[Why Hire ShakaCode?](https://blog.shakacode.com/can-shakacode-help-you-4a5b1e5a8a63#.jex6tg9w9)" provides additional details about our projects.
-
-If any of this resonates with you, please email me, [justin@shakacode.com](mailto:justin@shakacode.com). I offer a free half-hour project consultation, on anything from React on Rails to any aspect of web or mobile application development for both consumer and enterprise products.
-
-We are **[currently looking to hire](http://www.shakacode.com/about/#work-with-us)** like-minded developers that wish to work on our projects, including [Hawaii Chee](https://www.hawaiichee.com).
-
-I appreciate your attention and sharing of these offerings with anybody that we can help. Your support allows me to bring you and your team [front-end happiness in the Rails world](https://www.youtube.com/watch?v=SGkTvKRPYrk).
-
-Aloha and best wishes from the ShakaCode team!
-
 # ShakaCode Community
-Please [Subscribe](https://app.mailerlite.com/webforms/landing/l1d9x5) to keep in touch with Justin Gordon and [ShakaCode](http://www.shakacode.com/). I intend to send a monthly summary including announcements of new releases of bootstrap-loader and React on Rails and of our latest [blog articles](https://blog.shakacode.com) and tutorials. Subscribers will also have access to **exclusive content**, including tips and examples.
+Please [Subscribe](https://app.mailerlite.com/webforms/landing/l1d9x5) to keep in touch with Justin Gordon and [ShakaCode](http://www.shakacode.com/). Subscribers will also have access to **exclusive content**, including tips and examples.
 
 [![2017-01-31_14-16-56](https://cloud.githubusercontent.com/assets/1118459/22490211/f7a70418-e7bf-11e6-9bef-b3ccd715dbf8.png)](https://app.mailerlite.com/webforms/landing/l1d9x5)
 
 * **Slack Room**: [Contact us](mailto:contact@shakacode.com) for an invite to the ShakaCode Slack room!
 * **[forum.shakacode.com](https://forum.shakacode.com)**: Post your questions
-* **[@ShakaCode on Twitter](https://twitter.com/shakacode)**
-
-## React on Rails Info
-**[React on Rails](https://github.com/shakacode/react_on_rails)** is ShakaCode's flagship product. We want to make sure you're aware of it!
-
-### Testimonials
-From Joel Hooks, Co-Founder, Chief Nerd at [egghead.io](https://egghead.io/), January 30, 2017:
-![2017-01-30_11-33-59](https://cloud.githubusercontent.com/assets/1118459/22443635/b3549fb4-e6e3-11e6-8ea2-6f589dc93ed3.png)
-
-For more testimonials, see [Live Projects](https://github.com/shakacode/react_on_rails/blob/master/PROJECTS.md) and [Kudos](https://github.com/shakacode/react_on_rails/blob/master/KUDOS.md).
 
 ---------------
 
@@ -230,7 +194,7 @@ _sass-resources-loader_ is available under MIT. See [LICENSE](LICENSE) for more 
 * [bootstrap-loader](https://github.com/shakacode/bootstrap-loader/)
 
 
-## Example of Webpack 4 Config
+## Example of Webpack 4 Config for Vue
 
 ```
   module: {
