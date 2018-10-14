@@ -11,10 +11,7 @@ Note, this loader is not limited to SASS resources. It supposedly works with les
 ### Version 1.3.3 and great supports **Webpack 4**.
 
 # ShakaCode Community
-Please [Subscribe](https://app.mailerlite.com/webforms/landing/l1d9x5) to keep in touch with Justin Gordon and [ShakaCode](http://www.shakacode.com/). Subscribers will also have access to **exclusive content**, including tips and examples.
-
-[![2017-01-31_14-16-56](https://cloud.githubusercontent.com/assets/1118459/22490211/f7a70418-e7bf-11e6-9bef-b3ccd715dbf8.png)](https://app.mailerlite.com/webforms/landing/l1d9x5)
-
+* Please [Subscribe](https://app.mailerlite.com/webforms/landing/l1d9x5) to keep in touch with Justin Gordon and [ShakaCode](http://www.shakacode.com/). Subscribers will also have access to **exclusive content**, including tips and examples.
 * **Slack Room**: [Contact us](mailto:contact@shakacode.com) for an invite to the ShakaCode Slack room!
 * **[forum.shakacode.com](https://forum.shakacode.com)**: Post your questions
 
