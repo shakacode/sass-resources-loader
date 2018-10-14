@@ -1,7 +1,3 @@
-# [The ShakaCode team has availability to help your project as of 2018-03-27](http://www.shakacode.com/services).
-
-If your team might need my help, please [email me](mailto:justin@shakacode.com) for a free half-hour project consultation, on anything from React on Rails to any aspect of web or mobile application development for both consumer and enterprise products.
-
 # sass-resources-loader
 [![Build Status](https://travis-ci.org/shakacode/react_on_rails.svg?branch=master)](https://travis-ci.org/shakacode/sass-resources-loader)
 [![npm version](https://img.shields.io/npm/v/sass-resources-loader.svg?style=flat-square)](https://www.npmjs.com/package/sass-resources-loader)
