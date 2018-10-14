@@ -24,7 +24,7 @@ module.exports = function(source) {
   const resourcesFromConfig = (loaderUtils.getOptions(this) || {}).resources;
 
   if (!resourcesFromConfig) {
-    const error = new Error('Can\'t find sass resources in your config. Make sure loader.options.resources');
+    const error = new Error('Can\'t find sass resources in your config. Make sure loader.options.resources exists');
 
     return callback(error);
   }
