@@ -87,8 +87,7 @@ describe(`sass-resources-loader`, () => {
           }],
         },
       }, (err) => {
-        expect(err.message).toMatch(/Can\'t find sass resources in your config/);
-        expect(err.message).toMatch(/Make sure loader.options.resources exists/);
+        expect(err.message).toMatch(/Can\'t find sass resources in your config. Make sure loader.options.resources exists/);
         done();
       });
     });
