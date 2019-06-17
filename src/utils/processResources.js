@@ -1,14 +1,13 @@
 import logger from './logger';
 
-export default function(error, resources, source, module, callback) {
+export default function (error, resources, source, module, callback) {
   if (error) {
     logger.debug('Resources: **not found**');
     return callback(error);
   }
 
-  const stringifiedResources = (
-    Array.isArray(resources) ? resources.join('\n') : resources
-  ) + '\n';
+  const stringifiedResources = `${Array.isArray(resources) ? resources.join('\n') : resources
+  }\n`;
 
   const output = stringifiedResources + source;
 

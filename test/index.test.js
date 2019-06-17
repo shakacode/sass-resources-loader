@@ -1,7 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
+
 const pathToLoader = require.resolve('../lib/loader.js');
+
+/**
+ * See: https://github.com/facebook/jest/issues/1909
+ * @jest-environment node
+ */
 
 function runWebpack(baseConfig, done) {
   const webpackConfig = merge({
@@ -9,12 +15,13 @@ function runWebpack(baseConfig, done) {
       path: path.join(__dirname, 'output'),
       libraryTarget: 'commonjs2',
     },
+    mode: 'production',
   }, baseConfig);
 
   webpack(webpackConfig, (webpackErr, stats) => {
-    const err = webpackErr ||
-    (stats.hasErrors() && stats.compilation.errors[0]) ||
-    (stats.hasWarnings() && stats.compilation.warnings[0]);
+    const err = webpackErr
+      || (stats.hasErrors() && stats.compilation.errors[0])
+      || (stats.hasWarnings() && stats.compilation.warnings[0]);
 
     done(err || null);
   });
@@ -41,16 +48,16 @@ function execTest(testId, options) {
       },
     });
 
-    runWebpack(baseConfig, (err) => err ? reject(err) : resolve());
+    runWebpack(baseConfig, (err) => (err ? reject(err) : resolve()));
   });
 }
 
-describe(`sass-resources-loader`, () => {
+describe('sass-resources-loader', () => {
   describe('resources', () => {
     it('should parse resource', () => execTest('empty', {
       resources: path.resolve(__dirname, './scss/*.scss'),
     }).then(() => {
-      const output = require('./output/empty');
+      const output = require('./output/empty').default;
       expect(output).toMatchSnapshot();
     }));
 
@@ -59,7 +66,7 @@ describe(`sass-resources-loader`, () => {
         path.resolve(__dirname, './scss/*.scss'),
       ],
     }).then(() => {
-      const output = require('./output/empty2');
+      const output = require('./output/empty2').default;
       expect(output).toMatchSnapshot();
     }));
 
@@ -68,7 +75,7 @@ describe(`sass-resources-loader`, () => {
         path.resolve(__dirname, './scss/variables/*.scss'),
       ],
     }).then(() => {
-      const output = require('./output/imports');
+      const output = require('./output/imports').default;
       expect(output).toMatchSnapshot();
     }));
 
@@ -87,7 +94,7 @@ describe(`sass-resources-loader`, () => {
           }],
         },
       }, (err) => {
-        expect(err.message).toMatch(/Can\'t find sass resources in your config. Make sure loader.options.resources exists/);
+        expect(err.message).toMatch(/Can't find sass resources in your config. Make sure loader.options.resources exists/);
         done();
       });
     });
@@ -110,7 +117,7 @@ describe(`sass-resources-loader`, () => {
         },
       }, (err) => {
         expect(err.message).toMatch(/Something wrong with provided resources/);
-        expect(err.message).toMatch(/Make sure \'options.resources\' is String or Array of Strings/);
+        expect(err.message).toMatch(/Make sure 'options.resources' is String or Array of Strings/);
         done();
       });
     });
