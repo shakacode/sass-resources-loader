@@ -17,6 +17,7 @@ export default function (source) {
 
   const callback = webpack.async();
 
+  // eslint-disable-next-line no-underscore-dangle
   global.__DEBUG__ = process.env.DEBUG === 'sass-resources-loader' || process.env.DEBUG === '*';
 
   logger.debug('Hey, we\'re in DEBUG mode! Yabba dabba doo!');
@@ -72,4 +73,6 @@ export default function (source) {
       processResources(error, resources, source, moduleContext, callback);
     },
   );
-};
+
+  return undefined;
+}

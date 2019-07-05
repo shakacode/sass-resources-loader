@@ -38,4 +38,6 @@ export default function (error, file, contents, moduleContext, callback) {
   });
 
   callback(null, rewritten);
+
+  return undefined;
 }

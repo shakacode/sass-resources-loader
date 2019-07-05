@@ -57,6 +57,7 @@ describe('sass-resources-loader', () => {
     it('should parse resource', () => execTest('empty', {
       resources: path.resolve(__dirname, './scss/*.scss'),
     }).then(() => {
+      // eslint-disable-next-line global-require
       const output = require('./output/empty').default;
       expect(output).toMatchSnapshot();
     }));
@@ -66,6 +67,7 @@ describe('sass-resources-loader', () => {
         path.resolve(__dirname, './scss/*.scss'),
       ],
     }).then(() => {
+      // eslint-disable-next-line global-require
       const output = require('./output/empty2').default;
       expect(output).toMatchSnapshot();
     }));
@@ -75,6 +77,7 @@ describe('sass-resources-loader', () => {
         path.resolve(__dirname, './scss/variables/*.scss'),
       ],
     }).then(() => {
+      // eslint-disable-next-line global-require
       const output = require('./output/imports').default;
       expect(output).toMatchSnapshot();
     }));
@@ -125,6 +128,7 @@ describe('sass-resources-loader', () => {
 
   describe('imports', () => {
     it('should not rewrite path for imports with ~', () => {
+      // eslint-disable-next-line global-require
       const getNewImportPath = require('../lib/utils/rewriteImports').getRelativeImportPath;
       expect(getNewImportPath('~/bootstrap', '', '')).toMatch('~/bootstrap');
     });
