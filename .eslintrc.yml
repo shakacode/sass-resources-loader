@@ -7,5 +7,3 @@ globals:
 env:
   jest: true
 
-ecmaFeatures:
-  restParams: true

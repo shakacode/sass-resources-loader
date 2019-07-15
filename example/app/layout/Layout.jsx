@@ -4,6 +4,7 @@ import Hero from '../components/Hero/Hero';
 import Content from '../components/Content/Content';
 
 import css from './Layout.scss';
+import '../assets/styles/test.css';
 
 export default class Layout extends React.Component {
 

@@ -10,16 +10,17 @@ import parseResources from './utils/parseResources';
 import rewriteImports from './utils/rewriteImports';
 import logger from './utils/logger';
 
-module.exports = function(source) {
+export default function (source) {
   const webpack = this;
 
   if (webpack.cacheable) webpack.cacheable();
 
   const callback = webpack.async();
 
+  // eslint-disable-next-line no-underscore-dangle
   global.__DEBUG__ = process.env.DEBUG === 'sass-resources-loader' || process.env.DEBUG === '*';
 
-  logger.debug(`Hey, we're in DEBUG mode! Yabba dabba doo!`);
+  logger.debug('Hey, we\'re in DEBUG mode! Yabba dabba doo!');
 
   const resourcesFromConfig = (loaderUtils.getOptions(this) || {}).resources;
 
@@ -31,7 +32,9 @@ module.exports = function(source) {
 
   const resourcesLocations = parseResources(resourcesFromConfig);
   const moduleContext = webpack.context;
-  const webpackConfigContext = webpack.rootContext || (webpack.options && webpack.options.context) || process.cwd();
+  const webpackConfigContext = webpack.rootContext
+    || (webpack.options && webpack.options.context)
+    || process.cwd();
 
   if (!webpack.rootContext && !webpack.options && !webpack.options.context) {
     logger.debug(
@@ -68,6 +71,8 @@ module.exports = function(source) {
     },
     (error, resources) => {
       processResources(error, resources, source, moduleContext, callback);
-    }
+    },
   );
-};
+
+  return undefined;
+}

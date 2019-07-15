@@ -1,1 +1,1 @@
-export default multidimensional => [].concat.apply([], multidimensional);
+export default multidimensional => [].concat(...multidimensional);

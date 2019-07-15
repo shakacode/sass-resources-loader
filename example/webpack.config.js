@@ -1,7 +1,11 @@
 const webpack = require('webpack');
 const path = require('path');
 
+var production = process.env.NODE_ENV === 'production';
+const ExtractCssChunks = require("extract-css-chunks-webpack-plugin")
+
 module.exports = {
+  mode: production ? "production" : "development",
 
   entry: [
     'webpack-hot-middleware/client',
@@ -21,6 +25,12 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
+    new ExtractCssChunks(
+        {
+          filename: "[name].css",
+          chunkfilename: "[name].css",
+        }
+    ),
   ],
 
   module: {
@@ -31,15 +41,19 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.scss$/,
+        test: /\.(sass|scss|css)$/,
         use: [
-          'style-loader',
           {
+            loader: ExtractCssChunks.loader,
+            options: {
+              hot: production ? false : true,
+              modules: false,
+              reloadAll: true
+            }
+          }, {
             loader: 'css-loader',
             options: {
               modules: true,
-              importLoaders: 2,
-              localIdentName: '[path]__[local]__[hash:base64:5]',
             },
           },
           'postcss-loader',

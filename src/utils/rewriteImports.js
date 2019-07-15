@@ -6,13 +6,13 @@ const importRegexp = /@import\s+(?:'([^']+)'|"([^"]+)"|([^\s;]+))/g;
 
 export const getRelativeImportPath = (oldImportPath, absoluteImportPath, moduleContext) => {
   // from node_modules
-  if ((/^\~/).test(oldImportPath)) {
+  if ((/^~/).test(oldImportPath)) {
     return oldImportPath;
   }
   return path.relative(moduleContext, absoluteImportPath);
 };
 
-export default (error, file, contents, moduleContext, callback) => {
+export default function (error, file, contents, moduleContext, callback) {
   if (error) {
     logger.debug('Resources: **not found**');
     return callback(error);
@@ -38,4 +38,6 @@ export default (error, file, contents, moduleContext, callback) => {
   });
 
   callback(null, rewritten);
-};
+
+  return undefined;
+}
