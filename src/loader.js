@@ -50,7 +50,7 @@ export default function (source) {
   if (!resourcesLocations.length) {
     const error = new Error(`
       Something wrong with provided resources.
-      Make sure 'options.resources' is String or Array of Strings.
+      Make sure 'options.resources' is String or Array of Strings with a valid file path.
     `);
 
     return callback(error);
