@@ -27,7 +27,7 @@ npm install sass-resources-loader
 
 ## Usage
 
-Create your file (or files) with resources:
+Create your file (or files) with resources, which are snippets of Sass that you want available to places like CSS modules Sass:
 
 ```scss
 /* resources.scss */
