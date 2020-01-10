@@ -1,7 +1,7 @@
 {
   "name": "sass-resources-loader",
   "version": "2.0.1",
-  "description": "SASS resources loader for Webpack",
+  "description": "Sass resources loader for webpack",
   "main": "lib/loader.js",
   "scripts": {
     "start": "npm run lint && npm run clean && npm run dev",

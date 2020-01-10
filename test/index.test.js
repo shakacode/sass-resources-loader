@@ -127,10 +127,10 @@ describe('sass-resources-loader', () => {
   });
 
   describe('imports', () => {
-    it('should not rewrite path for imports with ~', () => {
+    it('should not rewrite paths for @use rules starting with ~', () => {
       // eslint-disable-next-line global-require
-      const getNewImportPath = require('../lib/utils/rewriteImports').getRelativeImportPath;
-      expect(getNewImportPath('~/bootstrap', '', '')).toMatch('~/bootstrap');
+      const getNewUsePath = require('../lib/utils/rewritePaths').getRelativeUsePath;
+      expect(getNewUsePath('~/bootstrap', '', '')).toMatch('~/bootstrap');
     });
   });
 });

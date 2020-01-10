@@ -7,7 +7,7 @@ import loaderUtils from 'loader-utils';
 
 import processResources from './utils/processResources';
 import parseResources from './utils/parseResources';
-import rewriteImports from './utils/rewriteImports';
+import rewritePaths from './utils/rewritePaths';
 import logger from './utils/logger';
 
 export default function (source) {
@@ -66,7 +66,7 @@ export default function (source) {
     files,
     (file, cb) => {
       fs.readFile(file, 'utf8', (error, contents) => {
-        rewriteImports(error, file, contents, moduleContext, cb);
+        rewritePaths(error, file, contents, moduleContext, cb);
       });
     },
     (error, resources) => {
