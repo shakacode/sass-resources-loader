@@ -1,6 +1,12 @@
 # Change Log
 ## [Unreleased]
 
+## [2.0.2] - 2020-04-12
+* Dependency updates
+
+## [2.0.1] - 2019-05-25
+* Dependency updates
+
 ## [2.0.0] - 2018-11-06
 * Puts back in reverted changes from 1.3.4, support for Webpack v4 and no support for Webpack v1. [#66](https://github.com/shakacode/sass-resources-loader/pull/66) by [david-ogalego](https://github.com/david-ogalego)
 
@@ -23,7 +29,9 @@
 
 For other releases see [GitHub Releases section](https://github.com/shakacode/sass-resources-loader/releases).
 
-[Unreleased]: https://github.com/shakacode/sass-resources-loader/compare/v2.0.0...master
+[Unreleased]: https://github.com/shakacode/sass-resources-loader/compare/v2.0.2...master
+[2.0.2]: https://github.com/shakacode/sass-resources-loader/compare/v2.0.1...v2.0.2
+[2.0.1]: https://github.com/shakacode/sass-resources-loader/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/shakacode/sass-resources-loader/compare/v1.3.5...v2.0.0
 [1.3.5]: https://github.com/shakacode/sass-resources-loader/compare/v1.3.4...v1.3.5
 [1.3.4]: https://github.com/shakacode/sass-resources-loader/compare/v1.3.3...v1.3.4
