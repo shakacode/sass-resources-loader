@@ -1,6 +1,9 @@
 # Change Log
 ## [Unreleased]
 
+## [2.0.3] - 2020-04-13
+* Dependency updates
+
 ## [2.0.2] - 2020-04-12
 * Dependency updates
 
@@ -29,7 +32,8 @@
 
 For other releases see [GitHub Releases section](https://github.com/shakacode/sass-resources-loader/releases).
 
-[Unreleased]: https://github.com/shakacode/sass-resources-loader/compare/v2.0.2...master
+[Unreleased]: https://github.com/shakacode/sass-resources-loader/compare/v2.0.3...master
+[2.0.3]: https://github.com/shakacode/sass-resources-loader/compare/v2.0.2...v2.0.3
 [2.0.2]: https://github.com/shakacode/sass-resources-loader/compare/v2.0.1...v2.0.2
 [2.0.1]: https://github.com/shakacode/sass-resources-loader/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/shakacode/sass-resources-loader/compare/v1.3.5...v2.0.0
