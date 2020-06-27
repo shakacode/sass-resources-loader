@@ -31,3 +31,18 @@ div {
 
 "
 `;
+
+exports[`sass-resources-loader resources should work with @use import 1`] = `
+"@use 'secret';
+
+$text-color: $ccc;
+
+div {
+    @include secret.my-mixin;
+
+    p {
+        color: secret.always-blue();
+    }
+}
+"
+`;

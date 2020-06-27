@@ -82,6 +82,16 @@ describe('sass-resources-loader', () => {
       expect(output).toMatchSnapshot();
     }));
 
+    it('should work with @use import', () => execTest('use/index', {
+      resources: [
+        path.resolve(__dirname, './scss/variables/*.scss'),
+      ],
+    }).then(() => {
+      // eslint-disable-next-line global-require
+      const output = require('./output/use/index').default;
+      expect(output).toMatchSnapshot();
+    }));
+
     it('should throw error when no resources provided', (done) => {
       runWebpack({
         entry: path.resolve(__dirname, 'scss', 'empty.scss'),
