@@ -168,13 +168,13 @@ describe('sass-resources-loader', () => {
       expect(getNewUsePath('~/bootstrap', '', '')).toMatch('~/bootstrap');
     });
 
-    it('should preserve import method', () => execTest('imports', {
+    it('should preserve import method', () => execTest('imports2', {
       resources: [
         path.resolve(__dirname, './scss/shared/_imports.scss'),
       ],
     }).then(() => {
       // eslint-disable-next-line global-require
-      const output = require('./output/imports').default;
+      const output = require('./output/imports2').default;
       expect(output).toMatchSnapshot();
     }));
   });
