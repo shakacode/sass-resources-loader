@@ -1,4 +1,4 @@
-@use 'secret';
+@use 'shared/index' as secret;
 
 div {
     @include secret.my-mixin;

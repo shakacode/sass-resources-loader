@@ -1,7 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`sass-resources-loader resources should include resources 1`] = `
+exports[`sass-resources-loader hoisting should hoist entry @use imports when option hoistUseStatements is true 1`] = `
+"@use 'shared/index' as secret;
+
+$text-color: $ccc;
+
+@mixin my-mixin {
+    background-color: gray;
+    color: white;
+}
+
+@function always-blue() {
+    @return blue;
+}
+
+div {
+    @include secret.my-mixin;
+
+    p {
+        color: secret.always-blue();
+    }
+}
+"
+`;
+
+exports[`sass-resources-loader hoisting should not hoist entry @use imports when option hoistUseStatements is false 1`] = `
 "$text-color: $ccc;
+
+@mixin my-mixin {
+    background-color: gray;
+    color: white;
+}
+
+@function always-blue() {
+    @return blue;
+}
+
+@use 'shared/index' as secret;
+
+div {
+    @include secret.my-mixin;
+
+    p {
+        color: secret.always-blue();
+    }
+}
+"
+`;
+
+exports[`sass-resources-loader hoisting should not hoist entry @use imports when option hoistUseStatements is not passed 1`] = `
+"$text-color: $ccc;
+
+@mixin my-mixin {
+    background-color: gray;
+    color: white;
+}
+
+@function always-blue() {
+    @return blue;
+}
+
+@use 'shared/index' as secret;
+
+div {
+    @include secret.my-mixin;
+
+    p {
+        color: secret.always-blue();
+    }
+}
+"
+`;
+
+exports[`sass-resources-loader imports should preserve import method 1`] = `
+"@use 'shared/index' as secret;
+@import 'shared/variables';
+
+div {
+    display: block;
+    color: $text-color;
+}
+"
+`;
+
+exports[`sass-resources-loader resources should include resources 1`] = `
+"@use 'shared/index' as secret;
+@import 'shared/variables';
 
 div {
     display: block;
@@ -11,38 +95,36 @@ div {
 `;
 
 exports[`sass-resources-loader resources should parse array resources 1`] = `
-"
+"@use 'shared/index' as secret;
+@import 'shared/variables';
 
-div {
-    display: block;
-    color: $text-color;
+@forward \\"variables\\";
+
+$text-color: $ccc;
+
+@mixin my-mixin {
+    background-color: gray;
+    color: white;
+}
+
+@function always-blue() {
+    @return blue;
 }
 
 "
 `;
 
 exports[`sass-resources-loader resources should parse resource 1`] = `
-"
+"$text-color: $ccc;
 
-div {
-    display: block;
-    color: $text-color;
+@mixin my-mixin {
+    background-color: gray;
+    color: white;
 }
 
-"
-`;
-
-exports[`sass-resources-loader resources should work with @use import 1`] = `
-"@use 'secret';
-
-$text-color: $ccc;
-
-div {
-    @include secret.my-mixin;
-
-    p {
-        color: secret.always-blue();
-    }
+@function always-blue() {
+    @return blue;
 }
+
 "
 `;

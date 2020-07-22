@@ -4,9 +4,9 @@
 [![dependencies status](https://img.shields.io/gemnasium/shakacode/sass-resources-loader.svg?style=flat-square)](https://gemnasium.com/shakacode/sass-resources-loader)
 [![license](https://img.shields.io/npm/l/sass-resources-loader.svg?style=flat-square)](https://www.npmjs.com/package/sass-resources-loader)
 
-This loader will `@import` your SASS resources into every `required` SASS module. So you can use your shared variables & mixins across all SASS styles without manually importing them in each file. Made to work with CSS Modules!
+This loader will load your SASS resources into every `required` SASS module. So you can use your shared variables, mixins and functions across all SASS styles without manually loading them in each file. Made to work with CSS Modules!
 
-Note, this loader is not limited to SASS resources. It supposedly works with less, post-css, etc. per [issue 31](https://github.com/shakacode/sass-resources-loader/issues/31).
+Note, this loader is not limited to Sass resources. It supposedly works with less, post-css, etc. per [issue 31](https://github.com/shakacode/sass-resources-loader/issues/31).
 
 ### Supports **Webpack 4**.
 
@@ -40,10 +40,17 @@ $section-width: 700px;
 }
 ```
 
+## Options
+
+| Name                 | Type                 | Default     | Description                                        |
+|----------------------|----------------------|-------------|----------------------------------------------------|
+| `resources`          | `{String\|String[]}` | `undefined` | Resources to include in files                      |
+| `hoistUseStatements` | `{Boolean}`          | `false`     | If true, entry file `@use` imports will be hoisted |
+
 ## Tips
-* Do not include anything that will be actually rendered in CSS, because it will be added to every imported SASS file.
-* Avoid using SASS `@import` rules inside resources files as it slows down incremental builds. Add imported files directly in `sassResources` array in webpack config instead. If you concerned about location of your resources index, you might want to check out the solution outlined in [this comment](https://github.com/shakacode/sass-resources-loader/issues/46#issuecomment-335211284).
-* If you still want to use SASS `@imports` make sure your paths are relative to the file they defined in (basically, your file with resources), except the ones started with `~` (`~` is resolved to `node_modules` folder).
+* Do not include anything that will be actually rendered in CSS, because it will be added to every imported Sass file.
+* Avoid using Sass `@use` rules inside resources files as it slows down incremental builds. Add imported files directly in `sassResources` array in webpack config instead. If you concerned about location of your resources index, you might want to check out the solution outlined in [this comment](https://github.com/shakacode/sass-resources-loader/issues/46#issuecomment-335211284).
+* If you still want to use Sass `@use` rules make sure your paths are relative to the file they defined in (basically, your file with resources), except the ones started with `~` (`~` is resolved to `node_modules` folder).
 
 Apply loader in webpack config (`v1.x.x` & `v2.x.x` are supported) and provide path to the file with resources:
 
@@ -67,7 +74,11 @@ module: {
             resources: './path/to/resources.scss',
 
             // Or array of paths
-            resources: ['./path/to/vars.scss', './path/to/mixins.scss']
+            resources: [
+              './path/to/vars.scss',
+              './path/to/mixins.scss',
+              './path/to/functions.scss'
+            ]
           },
         },
       ],
@@ -93,7 +104,7 @@ sassResources: ['./path/to/vars.scss', './path/to/mixins.scss'],
 
 > NOTE: If `webpackConfig.context` is not defined, `process.cwd()` will be used to resolve files with resource.
 
-Now you can use these resources without manually importing them:
+Now you can use these resources without manually loading them:
 
 ```scss
 /* component.scss */
@@ -205,7 +216,7 @@ module.exports = {
           resources: './path/to/resources.scss',
 
           // Or array of paths
-          resources: ['./path/to/vars.scss', './path/to/mixins.scss']
+          resources: ['./path/to/vars.scss', './path/to/mixins.scss', './path/to/functions.scss']
         })
         .end()
     })

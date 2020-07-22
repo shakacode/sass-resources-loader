@@ -1,0 +1,9 @@
+@use 'shared/index' as secret;
+
+div {
+    @include secret.my-mixin;
+
+    p {
+        color: secret.always-blue();
+    }
+}
