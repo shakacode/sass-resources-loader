@@ -1,6 +1,6 @@
 {
   "name": "sass-resources-loader",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "Sass resources loader for webpack",
   "main": "lib/loader.js",
   "scripts": {
