@@ -70,7 +70,7 @@ module: {
             resources: [
               './path/to/vars.scss',
               './path/to/mixins.scss',
-              './path/to.functions.scss'
+              './path/to/functions.scss'
             ]
           },
         },
