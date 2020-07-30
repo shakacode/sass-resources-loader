@@ -1,7 +1,10 @@
 import logger from './logger';
 
+// Finds any @use statement
 const useRegex = '^@use .*\n?$';
+// Same as above, but adds the m (multiline) flag
 const useRegexTest = new RegExp(useRegex, 'm');
+// Makes sure that only the last instance of `useRegex` variable is found
 const useRegexReplace = new RegExp(`${useRegex}(?![sS]*${useRegex})`, 'gm');
 
 const getOutput = (source, resources, { hoistUseStatements }) => {
