@@ -4,16 +4,17 @@
 [![dependencies status](https://img.shields.io/gemnasium/shakacode/sass-resources-loader.svg?style=flat-square)](https://gemnasium.com/shakacode/sass-resources-loader)
 [![license](https://img.shields.io/npm/l/sass-resources-loader.svg?style=flat-square)](https://www.npmjs.com/package/sass-resources-loader)
 
-This loader will `@import` your SASS resources into every `required` SASS module. So you can use your shared variables & mixins across all SASS styles without manually importing them in each file. Made to work with CSS Modules!
+This loader will `@import` your Sass resources into every `required` Sass module. So you can use your shared variables & mixins across all Sass styles without manually importing them in each file.
 
-Note, this loader is not limited to SASS resources. It supposedly works with less, post-css, etc. per [issue 31](https://github.com/shakacode/sass-resources-loader/issues/31).
+* Made to work with CSS Modules!
+* This loader is not limited to Sass resources. It supposedly works with less, post-css, etc. per [issue 31](https://github.com/shakacode/sass-resources-loader/issues/31).
+* Supports **Webpack 4**
+* Soon will support Sass `@use` syntax. See [PR 117](https://github.com/shakacode/sass-resources-loader/pull/117).
 
-### Supports **Webpack 4**.
+#### About
+This project is maintained by the software consulting firm [ShakaCode](https://www.shakacode.com). We focus on Ruby on Rails applications with React front-ends, often using TypeScript or ReasonML. We also build Gatsby sites. See [our recent work](https://www.shakacode.com/recent-work) for examples of what we do. Feel free to contact Justin Gordon, [justin@shakacode.com](mailto:justin@shakacode.com), for more information.
 
-# ShakaCode Community
-* Please [Subscribe](https://app.mailerlite.com/webforms/landing/l1d9x5) to keep in touch with Justin Gordon and [ShakaCode](http://www.shakacode.com/). Subscribers will also have access to **exclusive content**, including tips and examples.
-* **Slack Room**: [Contact us](mailto:contact@shakacode.com) for an invite to the ShakaCode Slack room!
-* **[forum.shakacode.com](https://forum.shakacode.com)**: Post your questions
+**Slack Room**: [Click for a Slack invite**](https://reactrails.slack.com/join/shared_invite/enQtNjY3NTczMjczNzYxLTlmYjdiZmY3MTVlMzU2YWE0OWM0MzNiZDI0MzdkZGFiZTFkYTFkOGVjODBmOWEyYWQ3MzA2NGE1YWJjNmVlMGE).
 
 ---------------
 
@@ -41,9 +42,9 @@ $section-width: 700px;
 ```
 
 ## Tips
-* Do not include anything that will be actually rendered in CSS, because it will be added to every imported SASS file.
-* Avoid using SASS `@import` rules inside resources files as it slows down incremental builds. Add imported files directly in `sassResources` array in webpack config instead. If you concerned about location of your resources index, you might want to check out the solution outlined in [this comment](https://github.com/shakacode/sass-resources-loader/issues/46#issuecomment-335211284).
-* If you still want to use SASS `@imports` make sure your paths are relative to the file they defined in (basically, your file with resources), except the ones started with `~` (`~` is resolved to `node_modules` folder).
+* Do not include anything that will be actually rendered in CSS, because it will be added to every imported Sass file.
+* Avoid using Sass `@import` rules inside resources files as it slows down incremental builds. Add imported files directly to the `sassResources` array in webpack config instead. If you concerned about location of your resources index, you might want to check out the solution outlined in [issue #46](https://github.com/shakacode/sass-resources-loader/issues/46#issuecomment-335211284).
+* If you still want to use Sass `@imports` make sure your paths are relative to the file they defined in (basically, your file with resources), except the ones started with `~` (`~` is resolved to `node_modules` folder).
 
 Apply loader in webpack config (`v1.x.x` & `v2.x.x` are supported) and provide path to the file with resources:
 
