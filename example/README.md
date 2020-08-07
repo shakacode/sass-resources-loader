@@ -2,11 +2,13 @@
 
 ```bash
 ### Install deps
-npm i
+yarn
 
 ### Run dev server with hot reloading
-npm start
+yarn start
 
 ### Compile production build using extract-text-webpack-plugin
-npm run build
+yarn run build
 ```
+
+Visit http://localhost:4000/
