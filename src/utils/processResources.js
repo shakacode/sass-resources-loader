@@ -1,6 +1,6 @@
 import logger from './logger';
 
-export default function (error, resources, source, module, callback) {
+export default function processResources(error, resources, source, module, callback) {
   if (error) {
     logger.debug('Resources: **not found**');
     return callback(error);

@@ -1,8 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 var production = process.env.NODE_ENV === 'production';
-const ExtractCssChunks = require("extract-css-chunks-webpack-plugin")
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: production ? "production" : "development",
@@ -25,13 +26,9 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    new ExtractCssChunks(
-        {
-          filename: "[name].css",
-          chunkfilename: "[name].css",
-        }
-    ),
-  ],
+    new MiniCssExtractPlugin(),
+    !production && new ReactRefreshWebpackPlugin(),
+  ].filter(Boolean),
 
   module: {
     rules: [
@@ -43,14 +40,9 @@ module.exports = {
       {
         test: /\.(sass|scss|css)$/,
         use: [
+          production && MiniCssExtractPlugin.loader,
+          !production && { loader: 'style-loader'},
           {
-            loader: ExtractCssChunks.loader,
-            options: {
-              hot: production ? false : true,
-              modules: false,
-              reloadAll: true
-            }
-          }, {
             loader: 'css-loader',
             options: {
               modules: true,
@@ -67,7 +59,7 @@ module.exports = {
               ],
             },
           },
-        ],
+        ].filter(Boolean),
       },
     ],
   },

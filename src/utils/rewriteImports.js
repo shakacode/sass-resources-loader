@@ -12,7 +12,7 @@ export const getRelativeImportPath = (oldImportPath, absoluteImportPath, moduleC
   return path.relative(moduleContext, absoluteImportPath);
 };
 
-export default function (error, file, contents, moduleContext, callback) {
+export default function rewriteImports(error, file, contents, moduleContext, callback) {
   if (error) {
     logger.debug('Resources: **not found**');
     return callback(error);
