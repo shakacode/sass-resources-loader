@@ -12,3 +12,5 @@ yarn run build
 ```
 
 Visit http://localhost:4000/
+
+Try changing the `jsx` and `scss` files and see the hot reloading in action.

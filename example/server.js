@@ -11,12 +11,15 @@ const devBuildConfig = require('./webpack.config');
 
 const PORT = 4000;
 
+process.env.WEBPACK_DEV_SERVER = true;
+
 const server = express();
 const compiler = webpack(devBuildConfig);
 
 server.use(webpackDevMiddleware(compiler, {
   publicPath: devBuildConfig.output.publicPath,
   hot: true,
+  inline: true,
   historyApiFallback: true,
   stats: {
     colors: true,
