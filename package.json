@@ -4,15 +4,15 @@
   "description": "SASS resources loader for Webpack",
   "main": "lib/loader.js",
   "scripts": {
-    "start": "npm run lint && npm run clean && npm run dev",
+    "start": "yarn run lint && yarn run clean && yarn run dev",
     "dev": "scripts/dev",
     "build": "scripts/build",
     "lint": "scripts/lint",
     "test": "jest",
     "clean": "scripts/clean",
-    "prerelease": "npm run clean && npm run build && npm run test && npm run lint",
-    "preversion": "npm run prerelease",
-    "prepublish": "npm run prerelease",
+    "prerelease": "yarn run clean && yarn run build && yarn run test && yarn run lint",
+    "preversion": "yarn run prerelease",
+    "prepublish": "yarn run prerelease",
     "release:patch": "scripts/release patch",
     "release:minor": "scripts/release minor",
     "release:major": "scripts/release major"
@@ -35,23 +35,23 @@
     "webpack"
   ],
   "dependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/preset-env": "^7.4.5",
-    "async": "^3.0.1",
-    "babel-eslint": "^10.0.2",
-    "chalk": "^2.4.2",
-    "glob": "^7.1.1",
-    "loader-utils": "^1.0.4"
+    "@babel/cli": "^7.10.5",
+    "@babel/preset-env": "^7.11.0",
+    "async": "^3.2.0",
+    "babel-eslint": "^10.1.0",
+    "chalk": "^4.1.0",
+    "glob": "^7.1.6",
+    "loader-utils": "^2.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb": "17.1.0",
-    "eslint-config-shakacode": "17.0.0",
-    "eslint-plugin-import": "^2.17.3",
-    "jest": "^24.8.0",
-    "raw-loader": "^3.0.0",
-    "webpack": "4.34.0",
-    "webpack-merge": "^4.1.0"
+    "@babel/core": "^7.11.1",
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-shakacode": "^17.0.0",
+    "eslint-plugin-import": "^2.22.0",
+    "jest": "^26.2.2",
+    "raw-loader": "^4.0.1",
+    "webpack": "^4.44.1",
+    "webpack-merge": "^5.1.1"
   }
 }
