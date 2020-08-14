@@ -1,6 +1,9 @@
 # Change Log
 ## [Unreleased]
 
+## [2.1.0] - 2020-07-22
+* Supports the new Sass module system released with Dart Sass 1.23.0. The use of @use is recommended instead of @import. [#117](https://github.com/shakacode/sass-resources-loader/pull/117) by [Toms Burgmanis](https://github.com/tomburgs)
+
 ## [2.0.3] - 2020-04-13
 * Dependency updates
 
@@ -32,7 +35,8 @@
 
 For other releases see [GitHub Releases section](https://github.com/shakacode/sass-resources-loader/releases).
 
-[Unreleased]: https://github.com/shakacode/sass-resources-loader/compare/v2.0.3...master
+[Unreleased]: https://github.com/shakacode/sass-resources-loader/compare/v2.1.0...master
+[2.1.0]: https://github.com/shakacode/sass-resources-loader/compare/v2.0.3...v2.1.0
 [2.0.3]: https://github.com/shakacode/sass-resources-loader/compare/v2.0.2...v2.0.3
 [2.0.2]: https://github.com/shakacode/sass-resources-loader/compare/v2.0.1...v2.0.2
 [2.0.1]: https://github.com/shakacode/sass-resources-loader/compare/v2.0.0...v2.0.1

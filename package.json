@@ -1,7 +1,7 @@
 {
   "name": "sass-resources-loader",
-  "version": "2.0.3",
-  "description": "Sass resources loader for Webpack",
+  "version": "2.1.0",
+  "description": "SASS resources loader for Webpack",
   "main": "lib/loader.js",
   "scripts": {
     "start": "yarn run lint && yarn run clean && yarn run dev",

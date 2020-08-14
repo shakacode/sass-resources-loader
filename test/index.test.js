@@ -55,7 +55,7 @@ function execTest(testId, options) {
 describe('sass-resources-loader', () => {
   describe('resources', () => {
     it('should parse resource', () => execTest('empty', {
-      resources: path.resolve(__dirname, './scss/*.scss'),
+      resources: path.resolve(__dirname, './scss/shared/_variables.scss'),
     }).then(() => {
       // eslint-disable-next-line global-require
       const output = require('./output/empty').default;
@@ -64,7 +64,7 @@ describe('sass-resources-loader', () => {
 
     it('should parse array resources', () => execTest('empty2', {
       resources: [
-        path.resolve(__dirname, './scss/*.scss'),
+        path.resolve(__dirname, './scss/shared/*.scss'),
       ],
     }).then(() => {
       // eslint-disable-next-line global-require
@@ -74,7 +74,7 @@ describe('sass-resources-loader', () => {
 
     it('should include resources', () => execTest('imports', {
       resources: [
-        path.resolve(__dirname, './scss/variables/*.scss'),
+        path.resolve(__dirname, './scss/shared/_imports.scss'),
       ],
     }).then(() => {
       // eslint-disable-next-line global-require
@@ -101,6 +101,7 @@ describe('sass-resources-loader', () => {
         done();
       });
     });
+
     it('should throw error when resources are empty', (done) => {
       runWebpack({
         entry: path.resolve(__dirname, 'scss', 'empty.scss'),
@@ -126,11 +127,55 @@ describe('sass-resources-loader', () => {
     });
   });
 
+  describe('hoisting', () => {
+    it('should hoist entry @use imports when option hoistUseStatements is true', () => execTest('hoist', {
+      resources: [
+        path.resolve(__dirname, './scss/shared/_variables.scss'),
+      ],
+      hoistUseStatements: true,
+    }).then(() => {
+      // eslint-disable-next-line global-require
+      const output = require('./output/hoist').default;
+      expect(output).toMatchSnapshot();
+    }));
+
+    it('should not hoist entry @use imports when option hoistUseStatements is false', () => execTest('hoist2', {
+      resources: [
+        path.resolve(__dirname, './scss/shared/_variables.scss'),
+      ],
+      hoistUseStatements: false,
+    }).then(() => {
+      // eslint-disable-next-line global-require
+      const output = require('./output/hoist2').default;
+      expect(output).toMatchSnapshot();
+    }));
+
+    it('should not hoist entry @use imports when option hoistUseStatements is not passed', () => execTest('hoist3', {
+      resources: [
+        path.resolve(__dirname, './scss/shared/_variables.scss'),
+      ],
+    }).then(() => {
+      // eslint-disable-next-line global-require
+      const output = require('./output/hoist3').default;
+      expect(output).toMatchSnapshot();
+    }));
+  });
+
   describe('imports', () => {
     it('should not rewrite path for imports with ~', () => {
       // eslint-disable-next-line global-require
-      const getNewImportPath = require('../lib/utils/rewriteImports').getRelativeImportPath;
-      expect(getNewImportPath('~/bootstrap', '', '')).toMatch('~/bootstrap');
+      const getNewUsePath = require('../lib/utils/rewritePaths').getRelativeUsePath;
+      expect(getNewUsePath('~/bootstrap', '', '')).toMatch('~/bootstrap');
     });
+
+    it('should preserve import method', () => execTest('imports2', {
+      resources: [
+        path.resolve(__dirname, './scss/shared/_imports.scss'),
+      ],
+    }).then(() => {
+      // eslint-disable-next-line global-require
+      const output = require('./output/imports2').default;
+      expect(output).toMatchSnapshot();
+    }));
   });
 });

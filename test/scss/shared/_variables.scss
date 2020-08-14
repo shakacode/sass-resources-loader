@@ -1,0 +1,10 @@
+$text-color: $ccc;
+
+@mixin my-mixin {
+    background-color: gray;
+    color: white;
+}
+
+@function always-blue() {
+    @return blue;
+}

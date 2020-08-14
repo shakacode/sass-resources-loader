@@ -3,11 +3,11 @@
 import fs from 'fs';
 import path from 'path';
 import async from 'async';
-import loaderUtils from 'loader-utils';
 
+import getOptions from './utils/getOptions';
 import processResources from './utils/processResources';
 import parseResources from './utils/parseResources';
-import rewriteImports from './utils/rewriteImports';
+import rewritePaths from './utils/rewritePaths';
 import logger from './utils/logger';
 
 export default function (source) {
@@ -22,7 +22,8 @@ export default function (source) {
 
   logger.debug('Hey, we\'re in DEBUG mode! Yabba dabba doo!');
 
-  const resourcesFromConfig = (loaderUtils.getOptions(this) || {}).resources;
+  const options = getOptions(this);
+  const { resources: resourcesFromConfig } = options;
 
   if (!resourcesFromConfig) {
     const error = new Error('Can\'t find sass resources in your config. Make sure loader.options.resources exists');
@@ -66,11 +67,11 @@ export default function (source) {
     files,
     (file, cb) => {
       fs.readFile(file, 'utf8', (error, contents) => {
-        rewriteImports(error, file, contents, moduleContext, cb);
+        rewritePaths(error, file, contents, moduleContext, cb);
       });
     },
     (error, resources) => {
-      processResources(error, resources, source, moduleContext, callback);
+      processResources(error, resources, source, options, moduleContext, callback);
     },
   );
 
