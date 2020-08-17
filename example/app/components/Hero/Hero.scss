@@ -1,3 +1,6 @@
+// Example of @use syntax
+@use '../../assets/styles/use/styles';
+
 .hero {
   @include center-text;
   @include full-width;
@@ -7,6 +10,7 @@
   color: $text-color;
 
   h1 {
+    font-style: styles.$italic;
     position: relative;
     top: 50%;
     transform: translateY(-50%);

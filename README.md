@@ -9,7 +9,7 @@ This loader will load your SASS resources into every `required` SASS module. So 
 * Made to work with CSS Modules!
 * This loader is not limited to Sass resources. It supposedly works with less, post-css, etc. per [issue 31](https://github.com/shakacode/sass-resources-loader/issues/31).
 * Supports **Webpack 4**
-* Supports Sass `@use` syntax.
+* Supports Sass `@use` syntax. You must use Dart Sass (`sass`, not `node-sass` npm package). See the `hoistUseStatements` option.
 
 #### About
 This project is maintained by the software consulting firm [ShakaCode](https://www.shakacode.com). We focus on Ruby on Rails applications with React front-ends, often using TypeScript or ReasonML. We also build Gatsby sites. See [our recent work](https://www.shakacode.com/recent-work) for examples of what we do. Feel free to contact Justin Gordon, [justin@shakacode.com](mailto:justin@shakacode.com), for more information.
@@ -74,7 +74,7 @@ $my-variable: #fff;
 
 #### `hoistUseStatements`
 Tells the compiler if an existing `@use` statement is found in entry file, it should be hoisted to the top.
-The reason is that `@use` must go before most other declarations, per the [docs](https://sass-lang.com/documentation/at-rules/use)
+The reason is that `@use` must go before most other declarations, except variable declarations, per the [docs](https://sass-lang.com/documentation/at-rules/use).
 
 If our entry file has the following content
 ```scss
@@ -109,6 +109,15 @@ $my-variable: #fff;
 
 // Rest of entry file's content goes here
 ```
+
+As mentioned in the [docs for Sass @use](https://sass-lang.com/documentation/at-rules/use), you don't need to hoist if your "resources" _only_ contains variable definitions.
+
+If you get the error:
+```
+SassError: @use rules must be written before any other rules.
+```
+
+then you need to use the `hoistUseStatements: true` option.
 
 ## Tips
 * Do not include anything that will be actually rendered in CSS, because it will be added to every imported Sass file.

@@ -12,7 +12,7 @@ export const getRelativeUsePath = (oldUsePath, absoluteUsePath, moduleContext) =
   return path.relative(moduleContext, absoluteUsePath);
 };
 
-export default function (error, file, contents, moduleContext, callback) {
+export default function rewritePaths(error, file, contents, moduleContext, callback) {
   if (error) {
     logger.debug('Resources: **not found**');
     return callback(error);

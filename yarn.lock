@@ -2676,6 +2676,11 @@ eslint-module-utils@^2.6.0:
     debug "^2.6.9"
     pkg-dir "^2.0.0"
 
+eslint-plugin-eslint-plugin@^2.1.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-eslint-plugin/-/eslint-plugin-eslint-plugin-2.3.0.tgz#1b6ffd13b74da5656e27106b79567b162984fc41"
+  integrity sha512-xER9XjfTLrAgoUzPguPKoreDGtXt2vUnwqAqdElNrkcSbl5K1rGtSOmhgbiqCb7UN4spnjNhIZplHMNWY6Kz/w==
+
 eslint-plugin-import@^2.22.0:
   version "2.22.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.22.0.tgz#92f7736fe1fde3e2de77623c838dd992ff5ffb7e"
@@ -2720,7 +2725,6 @@ eslint-plugin-react@^7.9.1:
     array-includes "^3.1.1"
     array.prototype.flatmap "^1.2.3"
     doctrine "^2.1.0"
-    eslint-plugin-eslint-plugin "^2.1.0"
     has "^1.0.3"
     jsx-ast-utils "^2.4.1"
     object.entries "^1.1.2"
