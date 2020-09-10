@@ -1,7 +1,6 @@
 # sass-resources-loader
 [![Build Status](https://travis-ci.org/shakacode/react_on_rails.svg?branch=master)](https://travis-ci.org/shakacode/sass-resources-loader)
 [![npm version](https://img.shields.io/npm/v/sass-resources-loader.svg?style=flat-square)](https://www.npmjs.com/package/sass-resources-loader)
-[![dependencies status](https://img.shields.io/gemnasium/shakacode/sass-resources-loader.svg?style=flat-square)](https://gemnasium.com/shakacode/sass-resources-loader)
 [![license](https://img.shields.io/npm/l/sass-resources-loader.svg?style=flat-square)](https://www.npmjs.com/package/sass-resources-loader)
 
 This loader will load your SASS resources into every `required` SASS module. So you can use your shared variables, mixins and functions across all SASS styles without manually loading them in each file.
@@ -14,7 +13,7 @@ This loader will load your SASS resources into every `required` SASS module. So 
 #### About
 This project is maintained by the software consulting firm [ShakaCode](https://www.shakacode.com). We focus on Ruby on Rails applications with React front-ends, often using TypeScript or ReasonML. We also build Gatsby sites. See [our recent work](https://www.shakacode.com/recent-work) for examples of what we do. Feel free to contact Justin Gordon, [justin@shakacode.com](mailto:justin@shakacode.com), for more information.
 
-**Slack Room**: [Click for a Slack invite**](https://reactrails.slack.com/join/shared_invite/enQtNjY3NTczMjczNzYxLTlmYjdiZmY3MTVlMzU2YWE0OWM0MzNiZDI0MzdkZGFiZTFkYTFkOGVjODBmOWEyYWQ3MzA2NGE1YWJjNmVlMGE).
+**Slack Room**: [Click for a Slack invite](https://reactrails.slack.com/join/shared_invite/enQtNjY3NTczMjczNzYxLTlmYjdiZmY3MTVlMzU2YWE0OWM0MzNiZDI0MzdkZGFiZTFkYTFkOGVjODBmOWEyYWQ3MzA2NGE1YWJjNmVlMGE).
 
 ---------------
 
