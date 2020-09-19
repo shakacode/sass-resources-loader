@@ -3,6 +3,9 @@
   "version": "2.1.0",
   "description": "SASS resources loader for Webpack",
   "main": "lib/loader.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "start": "yarn run lint && yarn run clean && yarn run dev",
     "dev": "scripts/dev",
@@ -35,16 +38,16 @@
     "webpack"
   ],
   "dependencies": {
-    "@babel/cli": "^7.10.5",
-    "@babel/preset-env": "^7.11.0",
     "async": "^3.2.0",
-    "babel-eslint": "^10.1.0",
     "chalk": "^4.1.0",
     "glob": "^7.1.6",
     "loader-utils": "^2.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "babel-eslint": "^10.1.0",
     "eslint": "^7.6.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-shakacode": "^17.0.0",
