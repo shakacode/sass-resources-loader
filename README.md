@@ -53,7 +53,7 @@ $section-width: 700px;
 Specify resources, contents of these will be prepended to each file.
 
 If file `example/a.scss` has content of `$my-variable: #fff`, we could do this
-```json
+```js
 {
     loader: 'sass-resources-loader',
     options: {
