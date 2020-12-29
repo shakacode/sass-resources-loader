@@ -25,8 +25,13 @@ export default function (source) {
   const options = getOptions(this);
   const { resources: resourcesFromConfig } = options;
 
-  if (!resourcesFromConfig) {
-    const error = new Error('Can\'t find sass resources in your config. Make sure loader.options.resources exists');
+  if (!resourcesFromConfig || 
+    !(
+      (Array.isArray(resourcesFromConfig) && resourcesFromConfig.length > 0) || 
+      typeof resourcesFromConfig === 'string'
+    )
+  ) {
+    const error = new Error('Can\'t find sass resources in your config. Make sure loader.options.resources exists and ha');
 
     return callback(error);
   }
@@ -48,13 +53,9 @@ export default function (source) {
   logger.debug('Webpack config context:', webpackConfigContext);
   logger.debug('Resources:', resourcesLocations);
 
-  if (!resourcesLocations.length) {
-    const error = new Error(`
-      Something wrong with provided resources.
-      Make sure 'options.resources' is String or Array of Strings with a valid file path.
-    `);
-
-    return callback(error);
+  if (resourcesLocations.length === 0) {
+    logger.log('No sass resources files found from your config.');
+    return undefined;
   }
 
   const files = resourcesLocations.map(resource => {

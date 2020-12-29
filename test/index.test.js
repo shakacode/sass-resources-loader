@@ -120,8 +120,39 @@ describe('sass-resources-loader', () => {
           }],
         },
       }, (err) => {
-        expect(err.message).toMatch(/Something wrong with provided resources/);
-        expect(err.message).toMatch(/Make sure 'options.resources' is String or Array of Strings/);
+        expect(err.message).toMatch(/Can't find sass resources in your config. Make sure loader.options.resources exists/);
+        done();
+      });
+    });
+
+    it('should throw error when resources are not found', (done) => {
+      const log = console.log;
+      let logs = '';
+      console.log = (...strs) => {
+        logs += strs.join(' ');
+      }
+
+      runWebpack({
+        entry: path.resolve(__dirname, 'scss', 'empty.scss'),
+        module: {
+          rules: [{
+            test: /\.scss$/,
+            use: [
+              { loader: 'raw-loader' },
+              {
+                loader: pathToLoader,
+                options: {
+                  resources: [
+                    path.resolve(__dirname, './scss/shared/_imaginary.scss')
+                  ],
+                },
+              },
+            ],
+          }],
+        },
+      }, (err) => {
+        console.log = log;
+        expect(logs).toMatch(/No sass resources files found from your config./);
         done();
       });
     });
