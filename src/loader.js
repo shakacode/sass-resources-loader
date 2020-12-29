@@ -31,7 +31,7 @@ export default function (source) {
       typeof resourcesFromConfig === 'string'
     )
   ) {
-    const error = new Error('Can\'t find sass resources in your config. Make sure loader.options.resources exists and ha');
+    const error = new Error('Can\'t find sass resources in your config. Make sure loader.options.resources exists');
 
     return callback(error);
   }
