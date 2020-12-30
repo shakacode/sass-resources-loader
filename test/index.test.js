@@ -125,6 +125,31 @@ describe('sass-resources-loader', () => {
         done();
       });
     });
+
+    it('should throw error when resources glob did not resolve any files', (done) => {
+      const resource = path.resolve(__dirname, 'scss/does-not-exist/*.scss');
+
+      runWebpack({
+        entry: path.resolve(__dirname, 'scss', 'empty.scss'),
+        module: {
+          rules: [{
+            test: /\.scss$/,
+            use: [
+              { loader: 'raw-loader' },
+              {
+                loader: pathToLoader,
+                options: {
+                  resources: [resource],
+                },
+              },
+            ],
+          }],
+        },
+      }, (err) => {
+        expect(err.message).toMatch(`Couldn't find any files with the glob ${resource}.`);
+        done();
+      });
+    });
   });
 
   describe('hoisting', () => {
