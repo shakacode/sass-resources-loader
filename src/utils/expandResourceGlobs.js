@@ -4,12 +4,12 @@ import logger from './logger';
 import isArrayOfStrings from './isArrayOfStrings';
 import flattenArray from './flattenArray';
 
-const getGlobPaths = (path) => {
-  const files = glob.sync(path);
+const getGlobPaths = (pattern) => {
+  const files = glob.sync(pattern);
 
   if (files.length === 0) {
     throw new Error(`
-      Couldn't find any files with the glob ${path}.
+      Couldn't find any files with the glob ${pattern}.
       Did you forget to resolve this to an absolute path with path.resolve?
     `);
   }
@@ -17,15 +17,15 @@ const getGlobPaths = (path) => {
   return files;
 };
 
-export default locations => {
-  if (typeof locations === 'string') {
+export default patterns => {
+  if (typeof patterns === 'string') {
     logger.debug('options.resources is String:', true);
-    return getGlobPaths(locations);
+    return getGlobPaths(patterns);
   }
 
-  if (isArrayOfStrings(locations)) {
+  if (isArrayOfStrings(patterns)) {
     logger.debug('options.resources is Array of Strings:', true);
-    const paths = locations.map(path => getGlobPaths(path));
+    const paths = patterns.map(pattern => getGlobPaths(pattern));
     return flattenArray(paths);
   }
 
