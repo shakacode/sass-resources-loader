@@ -6,7 +6,7 @@ import async from 'async';
 
 import getOptions from './utils/getOptions';
 import processResources from './utils/processResources';
-import parseResources from './utils/parseResources';
+import expandResourceGlobs from './utils/expandResourceGlobs';
 import rewritePaths from './utils/rewritePaths';
 import logger from './utils/logger';
 
@@ -31,7 +31,7 @@ export default function (source) {
     return callback(error);
   }
 
-  const resourcesLocations = parseResources(resourcesFromConfig);
+  const resourcesLocations = expandResourceGlobs(resourcesFromConfig);
   const moduleContext = webpack.context;
   const webpackConfigContext = webpack.rootContext
     || (webpack.options && webpack.options.context)
