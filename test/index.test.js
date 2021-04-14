@@ -211,6 +211,17 @@ describe('sass-resources-loader', () => {
       const output = require('./output/hoist3').default;
       expect(output).toMatchSnapshot();
     }));
+
+    it('should work with multiline @use statements', () => execTest('hoist-multiline', {
+      resources: [
+        path.resolve(__dirname, './scss/shared/_variables.scss'),
+      ],
+      hoistUseStatements: true,
+    }).then(() => {
+      // eslint-disable-next-line global-require
+      const output = require('./output/hoist-multiline').default;
+      expect(output).toMatchSnapshot();
+    }));
   });
 
   describe('imports', () => {
