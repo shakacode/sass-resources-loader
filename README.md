@@ -109,6 +109,15 @@ $my-variable: #fff;
 // Rest of entry file's content goes here
 ```
 
+You can also use this multi-line syntax:
+```scss
+@use 'config' with (
+    $text-color: #FAFAFA
+);
+```
+
+See [./test/scss/hoist-multiline.scss](./test/scss/hoist-multiline.scss) for an example.
+
 As mentioned in the [docs for Sass @use](https://sass-lang.com/documentation/at-rules/use), you don't need to hoist if your "resources" _only_ contains variable definitions.
 
 If you get the error:
