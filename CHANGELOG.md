@@ -1,6 +1,9 @@
 # Change Log
 ## [Unreleased]
 
+## [2.2.1] - 2020-09-19
+* Support multiline imports with @use syntax. Fixes: [#135](https://github.com/shakacode/sass-resources-loader/issues/135). [#140](https://github.com/shakacode/sass-resources-loader/pull/140) by [Toms Burgmanis](https://github.com/tomburgs).
+
 ## [2.2.0] - 2020-09-19
 * Add verbose error message when any of the specified resource globs don't return any files. Fixes: [#38](https://github.com/shakacode/sass-resources-loader/issues/38). [#134](https://github.com/shakacode/sass-resources-loader/pull/134) by [Toms Burgmanis](https://github.com/tomburgs).
 
@@ -41,7 +44,8 @@
 
 For other releases see [GitHub Releases section](https://github.com/shakacode/sass-resources-loader/releases).
 
-[Unreleased]: https://github.com/shakacode/sass-resources-loader/compare/v2.2.0...master
+[Unreleased]: https://github.com/shakacode/sass-resources-loader/compare/v2.2.1...master
+[2.2.1]: https://github.com/shakacode/sass-resources-loader/compare/v2.2.0...v2.2.1
 [2.2.0]: https://github.com/shakacode/sass-resources-loader/compare/v2.1.1...v2.2.0
 [2.1.1]: https://github.com/shakacode/sass-resources-loader/compare/v2.0.3...v2.1.1
 [2.1.0]: https://github.com/shakacode/sass-resources-loader/compare/v2.0.3...v2.1.0
