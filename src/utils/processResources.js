@@ -1,7 +1,9 @@
 import logger from './logger';
 
+// Matches opening and closing parenthesis across multiple lines
+const multilineParenthesisRegex = '\\([\\s\\S]*?\\);?';
 // Finds any @use statement
-const useRegex = '^@use .*\n?$';
+const useRegex = `^@use \\S*(?: with ${multilineParenthesisRegex}|.*)?\n?$`;
 // Same as above, but adds the m (multiline) flag
 const useRegexTest = new RegExp(useRegex, 'm');
 // Makes sure that only the last instance of `useRegex` variable is found

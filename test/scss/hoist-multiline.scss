@@ -1,0 +1,11 @@
+@use 'shared/index' with (
+    $text-color: blue
+);
+
+div {
+    @include secret.my-mixin;
+
+    p {
+        color: secret.always-blue();
+    }
+}

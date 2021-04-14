@@ -72,6 +72,32 @@ div {
 "
 `;
 
+exports[`sass-resources-loader hoisting should work with multiline @use statements 1`] = `
+"@use 'shared/index' with (
+    $text-color: blue
+);
+
+$text-color: $ccc;
+
+@mixin my-mixin {
+    background-color: gray;
+    color: white;
+}
+
+@function always-blue() {
+    @return blue;
+}
+
+div {
+    @include secret.my-mixin;
+
+    p {
+        color: secret.always-blue();
+    }
+}
+"
+`;
+
 exports[`sass-resources-loader imports should preserve import method 1`] = `
 "@use 'shared/index' as secret;
 @import 'shared/variables';
