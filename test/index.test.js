@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
+const { getOutput } = require('../src/utils/processResources');
 
 const pathToLoader = require.resolve('../lib/loader.js');
 
@@ -240,5 +241,29 @@ describe('sass-resources-loader', () => {
       const output = require('./output/imports2').default;
       expect(output).toMatchSnapshot();
     }));
+
+    it('should not rewrite the path for built-ins with @use', () => execTest('use-builtin', {
+      hoistUseStatements: true,
+      resources: [
+        path.resolve(__dirname, './scss/shared/_math.scss'),
+      ],
+    }).then(() => {
+      // eslint-disable-next-line global-require
+      const output = require('./output/use-builtin').default;
+      expect(output).toMatchSnapshot();
+    }));
+  });
+
+  describe('getOutput', () => {
+    it('de-duplicates imports from the source when they\'re present in a resource and `hoiseUseStatements` is enabled', () => {
+      const result = getOutput(
+        "@use 'sass:math';\n@use 'sass:list';\n@use 'sass:map';\ndiv { padding: $padding; }",
+        "@use 'sass:math';\n$padding: 10px;",
+        { hoistUseStatements: true },
+      );
+      expect(result).toBe(
+        "@use 'sass:math';\n@use 'sass:list';\n@use 'sass:map';\n\n$padding: 10px;\ndiv { padding: $padding; }",
+      );
+    });
   });
 });
