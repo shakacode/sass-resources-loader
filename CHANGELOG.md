@@ -1,5 +1,6 @@
 # Change Log
-## [Unreleased]
+## [2.2.2] - Unreleased
+* De-duplicate hoisted imports and avoid rewriting imports of built-ins. [#142](https://github.com/shakacode/sass-resources-loader/pull/142) by [Jan Amann](https://github.com/amannn).
 
 ## [2.2.1] - 2021-04-14
 * Support multi-line imports with @use syntax. Fixes: [#135](https://github.com/shakacode/sass-resources-loader/issues/135). [#140](https://github.com/shakacode/sass-resources-loader/pull/140) by [Toms Burgmanis](https://github.com/tomburgs).
