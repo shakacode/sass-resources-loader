@@ -1,0 +1,3 @@
+@use 'sass:math';
+
+$padding: #{math.div(4 / 2)}px;

@@ -22,8 +22,12 @@ export default function rewritePaths(error, file, contents, moduleContext, callb
     return callback(null, contents);
   }
 
-
   const rewritten = contents.replace(useRegexp, (entire, importer, single, double, unquoted) => {
+    // Don't rewrite imports from built-ins
+    if (single.indexOf('sass:') === 0) {
+      return entire;
+    }
+
     const oldUsePath = single || double || unquoted;
 
     const absoluteUsePath = path.join(path.dirname(file), oldUsePath);

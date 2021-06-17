@@ -1,0 +1,7 @@
+// Should be de-duplicated
+@use 'sass:math';
+
+div {
+    padding: $padding;
+    margin: #{math.div(4 / 2)}px;;
+}
