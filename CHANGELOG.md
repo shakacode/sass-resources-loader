@@ -1,5 +1,8 @@
 # Change Log
-## [2.2.2] - Unreleased
+## [2.2.3] - 2021-06-21
+* Fix regression introduced in 2.2.2 for "causes TypeError: Cannot read property 'indexOf' of undefined". [#145](https://github.com/shakacode/sass-resources-loader/pull/145) by [Juan Antonio Gómez](https://github.com/shokmaster).
+
+## [2.2.2] - 2021-06-16
 * De-duplicate hoisted imports and avoid rewriting imports of built-ins. [#142](https://github.com/shakacode/sass-resources-loader/pull/142) by [Jan Amann](https://github.com/amannn).
 
 ## [2.2.1] - 2021-04-14
@@ -45,7 +48,9 @@
 
 For other releases see [GitHub Releases section](https://github.com/shakacode/sass-resources-loader/releases).
 
-[Unreleased]: https://github.com/shakacode/sass-resources-loader/compare/v2.2.1...master
+[Unreleased]: https://github.com/shakacode/sass-resources-loader/compare/v2.2.3...master
+[2.2.3]: https://github.com/shakacode/sass-resources-loader/compare/v2.2.2...v2.2.3
+[2.2.2]: https://github.com/shakacode/sass-resources-loader/compare/v2.2.1...v2.2.2
 [2.2.1]: https://github.com/shakacode/sass-resources-loader/compare/v2.2.0...v2.2.1
 [2.2.0]: https://github.com/shakacode/sass-resources-loader/compare/v2.1.1...v2.2.0
 [2.1.1]: https://github.com/shakacode/sass-resources-loader/compare/v2.0.3...v2.1.1
