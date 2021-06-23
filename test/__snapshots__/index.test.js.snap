@@ -112,6 +112,20 @@ div {
 "
 `;
 
+exports[`sass-resources-loader imports should not rewrite the path for built-ins with @use and double quotes 1`] = `
+"// Should be de-duplicated
+@use 'sass:math';
+
+
+$padding: #{math.div(4 / 2)}px;
+
+div {
+    padding: $padding;
+    margin: #{math.div(4 / 2)}px;;
+}
+"
+`;
+
 exports[`sass-resources-loader imports should preserve import method 1`] = `
 "@use 'shared/index' as secret;
 @import 'shared/variables';
@@ -139,6 +153,10 @@ exports[`sass-resources-loader resources should parse array resources 1`] = `
 @import 'shared/variables';
 
 @forward \\"variables\\";
+
+@use \\"sass:math\\";
+
+$padding: #{math.div(4 / 2)}px;
 
 @use 'sass:math';
 

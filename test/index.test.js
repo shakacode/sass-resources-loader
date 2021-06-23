@@ -252,6 +252,17 @@ describe('sass-resources-loader', () => {
       const output = require('./output/use-builtin').default;
       expect(output).toMatchSnapshot();
     }));
+
+    it('should not rewrite the path for built-ins with @use and double quotes', () => execTest('use-builtin', {
+      hoistUseStatements: true,
+      resources: [
+        path.resolve(__dirname, './scss/shared/_math-double-quotes.scss'),
+      ],
+    }).then(() => {
+      // eslint-disable-next-line global-require
+      const output = require('./output/use-builtin').default;
+      expect(output).toMatchSnapshot();
+    }));
   });
 
   describe('getOutput', () => {
