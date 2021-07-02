@@ -1,4 +1,7 @@
 # Change Log
+## [2.2.4] - Unreleased
+* Support double quoted imports of built-ins. [#145](https://github.com/shakacode/sass-resources-loader/pull/147) by [Jan Amann](https://github.com/amannn).
+
 ## [2.2.3] - 2021-06-21
 * Fix regression introduced in 2.2.2 for "causes TypeError: Cannot read property 'indexOf' of undefined". [#145](https://github.com/shakacode/sass-resources-loader/pull/145) by [Juan Antonio Gómez](https://github.com/shokmaster).
 
