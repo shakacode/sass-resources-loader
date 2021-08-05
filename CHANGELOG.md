@@ -1,5 +1,8 @@
 # Change Log
-## [2.2.4] - Unreleased
+## [Unreleased]
+_For commits on master, but not yet pushed to NPM._
+
+## [2.2.4] - 2021-08-05
 * Support double quoted imports of built-ins. [#145](https://github.com/shakacode/sass-resources-loader/pull/147) by [Jan Amann](https://github.com/amannn).
 
 ## [2.2.3] - 2021-06-21
