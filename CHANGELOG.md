@@ -51,7 +51,8 @@
 
 For other releases see [GitHub Releases section](https://github.com/shakacode/sass-resources-loader/releases).
 
-[Unreleased]: https://github.com/shakacode/sass-resources-loader/compare/v2.2.3...master
+[Unreleased]: https://github.com/shakacode/sass-resources-loader/compare/v2.2.4...master
+[2.2.4]: https://github.com/shakacode/sass-resources-loader/compare/v2.2.3...v2.2.4
 [2.2.3]: https://github.com/shakacode/sass-resources-loader/compare/v2.2.2...v2.2.3
 [2.2.2]: https://github.com/shakacode/sass-resources-loader/compare/v2.2.1...v2.2.2
 [2.2.1]: https://github.com/shakacode/sass-resources-loader/compare/v2.2.0...v2.2.1
