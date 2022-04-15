@@ -2,6 +2,9 @@
 ## [Unreleased]
 _For commits on master, but not yet pushed to NPM._
 
+## [2.2.5] - 2022-04-14
+* Update async to v3.2.3. [#154](https://github.com/shakacode/sass-resources-loader/pull/154) by [Ian Hutchinson](https://github.com/ian-hutchinson).
+
 ## [2.2.4] - 2021-08-05
 * Support double quoted imports of built-ins. [#145](https://github.com/shakacode/sass-resources-loader/pull/147) by [Jan Amann](https://github.com/amannn).
 
@@ -54,7 +57,8 @@ _For commits on master, but not yet pushed to NPM._
 
 For other releases see [GitHub Releases section](https://github.com/shakacode/sass-resources-loader/releases).
 
-[Unreleased]: https://github.com/shakacode/sass-resources-loader/compare/v2.2.4...master
+[Unreleased]: https://github.com/shakacode/sass-resources-loader/compare/v2.2.5...master
+[2.2.5]: https://github.com/shakacode/sass-resources-loader/compare/v2.2.4...v2.2.5
 [2.2.4]: https://github.com/shakacode/sass-resources-loader/compare/v2.2.3...v2.2.4
 [2.2.3]: https://github.com/shakacode/sass-resources-loader/compare/v2.2.2...v2.2.3
 [2.2.2]: https://github.com/shakacode/sass-resources-loader/compare/v2.2.1...v2.2.2
