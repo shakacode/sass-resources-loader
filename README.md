@@ -311,3 +311,15 @@ See [Contributing](CONTRIBUTING.md) to get started.
 
 ## License
 _sass-resources-loader_ is available under MIT. See [LICENSE](LICENSE) for more details.
+
+# Supporters
+
+The following companies support this open source project, and ShakaCode uses their products! Justin writes React on Rails on [RubyMine](https://www.jetbrains.com/ruby/). We use [Scout](https://scoutapp.com/) to monitor the live performance of [HiChee.com](https://HiChee.com), [Rails AutoScale](https://railsautoscale.com) to scale the dynos of HiChee, and [HoneyBadger](https://www.honeybadger.io/) to monitor application errors. We love [BrowserStack](https://www.browserstack.com) to solve problems with oddball browsers.
+
+[![RubyMine](https://user-images.githubusercontent.com/1118459/114100597-3b0e3000-9860-11eb-9b12-73beb1a184b2.png)](https://www.jetbrains.com/ruby/)
+[![Scout](https://user-images.githubusercontent.com/1118459/171088197-81555b69-9ed0-4235-9acf-fcb37ecfb949.png)](https://scoutapp.com/)
+[![Rails AutoScale](https://user-images.githubusercontent.com/1118459/103197530-48dc0e80-488a-11eb-8b1b-a16664b30274.png)](https://railsautoscale.com/)
+[![BrowserStack](https://cloud.githubusercontent.com/assets/1118459/23203304/1261e468-f886-11e6-819e-93b1a3f17da4.png)](https://www.browserstack.com)
+[![HoneyBadger](https://user-images.githubusercontent.com/1118459/114100696-63962a00-9860-11eb-8ac1-75ca02856d8e.png)](https://www.honeybadger.io/)
+
+ShakaCode's favorite project tracking tool is [Shortcut](https://shortcut.com/). If you want to **try Shortcut and get 2 months free beyond the 14-day trial period**, click [here to use ShakaCode's referral code](http://r.clbh.se/mvfoNeH). We're participating in their awesome triple-sided referral program, which you can read about [here](https://shortcut.com/referral/). By using our [referral code](http://r.clbh.se/mvfoNeH) you'll be supporting ShakaCode and, thus, React on Rails!
