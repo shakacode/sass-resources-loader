@@ -10,10 +10,10 @@ This loader will load your SASS resources into every `required` SASS module. So 
 * Supports **Webpack 4**
 * Supports Sass `@use` syntax. You must use Dart Sass (`sass`, not `node-sass` npm package). See the `hoistUseStatements` option.
 
-#### About
-This project is maintained by the software consulting firm [ShakaCode](https://www.shakacode.com). We focus on Ruby on Rails applications with React front-ends, often using TypeScript or ReasonML. We also build Gatsby sites. See [our recent work](https://www.shakacode.com/recent-work) for examples of what we do. Feel free to contact Justin Gordon, [justin@shakacode.com](mailto:justin@shakacode.com), for more information.
-
-**Slack Room**: [Click for a Slack invite](https://reactrails.slack.com/join/shared_invite/enQtNjY3NTczMjczNzYxLTlmYjdiZmY3MTVlMzU2YWE0OWM0MzNiZDI0MzdkZGFiZTFkYTFkOGVjODBmOWEyYWQ3MzA2NGE1YWJjNmVlMGE).
+> ### ShakaCode
+> If you are looking for help with the development and optimization of your project, [ShakaCode](https://www.shakacode.com) can help you to take the reliability and performance of your app to the next level.
+>
+> If you are a developer interested in working on Ruby on Rails / Rust / TypeScript / ReScript projects, [we're hiring](https://www.shakacode.com/career/)!
 
 ---------------
 
