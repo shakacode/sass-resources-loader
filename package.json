@@ -38,7 +38,7 @@
     "webpack"
   ],
   "dependencies": {
-    "async": "^3.2.3",
+    "async": "^3.2.4",
     "chalk": "^4.1.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.8",
