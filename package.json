@@ -54,10 +54,10 @@
     "eslint": "5.16.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-shakacode": "^17.0.0",
-    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-import": "^2.26.0",
     "jest": "^26.2.2",
-    "raw-loader": "^4.0.1",
+    "raw-loader": "^4.0.2",
     "webpack": "^4.44.1",
-    "webpack-merge": "^5.1.1"
+    "webpack-merge": "^5.8.0"
   }
 }
