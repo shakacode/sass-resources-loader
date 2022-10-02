@@ -42,6 +42,7 @@
     "chalk": "^4.1.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "glob": "^7.1.6",
     "loader-utils": "^2.0.0"
   },
