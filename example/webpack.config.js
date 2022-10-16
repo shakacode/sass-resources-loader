@@ -54,7 +54,7 @@ module.exports = {
             loader: 'sass-resources-loader',
             options: {
               // Must be true b/c of mixins
-              hoistUseStatements: false,
+              hoistUseStatements: true,
               resources: [
                 path.resolve(__dirname, './app/assets/styles/variables/*.scss'),
                 path.resolve(__dirname, './app/assets/styles/mixins.scss'),
