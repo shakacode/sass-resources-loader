@@ -19,8 +19,7 @@
     "type": "git",
     "url": "https://github.com/shakacode/sass-resources-loader"
   },
-  "bugs":
-  {
+  "bugs": {
     "url": "https://github.com/shakacode/sass-resources-loader/issues"
   },
   "keywords": [
@@ -36,19 +35,22 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/core": "^7.19.3",
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/preset-env": "^7.19.3",
+    "@babel/preset-react": "^7.18.6",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.1",
     "autoprefixer": "^9.0.0",
-    "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
     "body-parser": "^1.14.2",
     "css-loader": "^4.2.1",
     "eslint": "^7.6.0",
-    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-shakacode": "17.0.0",
-    "eslint-plugin-react": "^7.13.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "express": "^4.13.4",
     "nodemon": "^2.0.4",
     "postcss-loader": "^3.0.0",
