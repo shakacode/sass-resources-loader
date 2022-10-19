@@ -1,9 +1,9 @@
 # sass-resources-loader
-[![Build Status](https://travis-ci.org/shakacode/react_on_rails.svg?branch=master)](https://travis-ci.org/shakacode/sass-resources-loader)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/shakacode/sass-resources-loader/Node.js%20CI)
 [![npm version](https://img.shields.io/npm/v/sass-resources-loader.svg?style=flat-square)](https://www.npmjs.com/package/sass-resources-loader)
 [![license](https://img.shields.io/npm/l/sass-resources-loader.svg?style=flat-square)](https://www.npmjs.com/package/sass-resources-loader)
 
-This loader will load your SASS resources into every `required` SASS module. So you can use your shared variables, mixins and functions across all SASS styles without manually loading them in each file.
+This loader will load your Sass resources into every `required` Sass module. So you can use your shared variables, mixins and functions across all Sass styles without manually loading them in each file.
 
 * Made to work with CSS Modules!
 * This loader is not limited to Sass resources. It supposedly works with less, post-css, etc. per [issue 31](https://github.com/shakacode/sass-resources-loader/issues/31).
@@ -45,14 +45,14 @@ $section-width: 700px;
 | Name                 | Type                 | Default     | Description                                                                                                                  |
 |----------------------|----------------------|-------------|------------------------------------------------------------------------------------------------------------------------------|
 | `resources`          | `{String\|String[]}` | `undefined` | Resources to include in files                                                                                                |
-| `hoistUseStatements` | `{Boolean}`          | `false`     | If true, entry file `@use` imports will be hoisted. This means the @use statements will go above the inclusion of resources. |
+| `hoistUseStatements` | `{Boolean}`          | `false`     | If `true`, entry file `@use` imports will be hoisted. This means that `@use` statements will go above the inclusion of resources. |
 
 ### Option Examples
 
 #### `resources`
-Specify resources, contents of these will be prepended to each file.
+Specify resources, contents of which will be prepended to each file.
 
-If file `example/a.scss` has content of `$my-variable: #fff`, we could do this
+For example, if variable `$my-variable: #fff` is in file `example/a.scss`, specify this file as a resource in your `webpack.config.js`
 ```js
 {
     loader: 'sass-resources-loader',
@@ -62,13 +62,13 @@ If file `example/a.scss` has content of `$my-variable: #fff`, we could do this
 }
 ````
 
-This would output the following:
+to prepend this variable
 ```scss
 // Entry file
 
 $my-variable: #fff;
 
-// Entry file's contents go here
+// Entry file's content go here
 ```
 
 #### `hoistUseStatements`
@@ -91,8 +91,7 @@ $my-variable: #fff;
     color: #000;
 }
 ```
-
-Then the output, with hoistUseStatements set to true would be the following.
+then the output, with `hoistUseStatements` set to `true`, would be the following.
 Note that the `@use` statements are above the inclusion of resources.
 ```scss
 // Entry file
@@ -208,7 +207,7 @@ render() {
 ```
 
 ### Glob pattern matching
-You can specify glob patterns to match your all of your files in the same directory.
+You can specify glob patterns to match all of your files in the same directory.
 ```js
 // Specify a single path
 resources: './path/to/resources/**/*.scss', // will match all files in folder and subdirectories
@@ -280,7 +279,7 @@ if (loader === 'sass') {
 
 ### VueJS webpack template(vue-cli@3)
 
-If you are using vue-cli@3, you need create a `vue.config.js` file in your project root(next to package.json). Then, add the following code :
+If you are using vue-cli@3, you need to create a `vue.config.js` file in your project root (next to `package.json`). Then, add the following code:
 
 ```js
 // vue.config.js
