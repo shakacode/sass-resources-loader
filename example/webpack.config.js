@@ -2,11 +2,11 @@ const webpack = require('webpack');
 const path = require('path');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
-var production = process.env.NODE_ENV === 'production';
+const production = process.env.NODE_ENV === 'production';
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  mode: production ? "production" : "development",
+  mode: production ? 'production' : 'development',
 
   entry: [
     'webpack-hot-middleware/client',
@@ -41,7 +41,7 @@ module.exports = {
         test: /\.(sass|scss|css)$/,
         use: [
           production && MiniCssExtractPlugin.loader,
-          !production && { loader: 'style-loader'},
+          !production && { loader: 'style-loader' },
           {
             loader: 'css-loader',
             options: {

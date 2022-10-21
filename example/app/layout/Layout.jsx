@@ -6,8 +6,7 @@ import Content from '../components/Content/Content';
 import css from './Layout.scss';
 import '../assets/styles/test.css';
 
-export default class Layout extends React.Component {
-
+export default class Layout extends React.PureComponent {
   render() {
     return (
       <section className={css.layout}>
@@ -16,5 +15,4 @@ export default class Layout extends React.Component {
       </section>
     );
   }
-
 }

@@ -35,7 +35,7 @@ server.use(webpackHotMiddleware(compiler));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 
-server.use('/', (req, res) => (
+server.use('/', ({ res }) => (
   res.sendFile(path.join(__dirname, 'app', 'markup', 'index.html'))
 ));
 
