@@ -14,19 +14,19 @@ git clone https://github.com/your-username/sass-resources-loader.git
 To start development simply run:
 
 ```
-npm start
+yarn start
 ```
 
 It will run linters, clear directory with previous build, create new build and run watchers to re-build on every change.
 
-To develop your local version of module and use it in local test project use `npm-link`:
+To develop your local version of module and use it in local test project use `yarn link`:
 
 ```
 cd path/to/local/sass-resources-loader
-npm link
+yarn link
 
 cd path/to/test-project
-npm link sass-resources-loader
+yarn link sass-resources-loader
 ```
 
 It will create symlinks to your local `sass-resources-loader`, thus you don't have to reinstall it on every change.
@@ -35,19 +35,17 @@ It will create symlinks to your local `sass-resources-loader`, thus you don't ha
 To create a build run:
 
 ```
-npm run prerelease
+yarn run prerelease
 ```
 
-It will do the same things as `npm start`, but without activating watchers.
+It will do the same things as `yarn start`, but without activating watchers.
 
 ### Linting and Testing
 To lint your code run:
 
 ```
-npm run lint
+yarn run lint
 ```
-
-Shame on us, but we don't have any tests here yet. We will be happy, if you can give us a hand with it.
 
 ## Example
 `sass-resources-loader` comes with [example](example) to demonstrate how to implement it.
