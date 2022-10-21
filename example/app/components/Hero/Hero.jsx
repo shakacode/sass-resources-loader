@@ -2,8 +2,7 @@ import React from 'react';
 
 import css from './Hero.scss';
 
-export default class Hero extends React.Component {
-
+export default class Hero extends React.PureComponent {
   render() {
     return (
       <section className={css.hero}>
@@ -11,5 +10,4 @@ export default class Hero extends React.Component {
       </section>
     );
   }
-
 }
