@@ -6,4 +6,19 @@ globals:
 
 env:
   jest: true
+  browser: true
 
+parser: babel-eslint
+rules:
+  react/jsx-filename-extension:
+    - extensions:
+      - .js
+      - .jsx
+settings:
+  import/resolver:
+    node:
+      paths:
+      - example/app/startup
+      - example/app/components/Content
+      - example/app/components/Hero
+      - example/app/layout
