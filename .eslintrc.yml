@@ -6,4 +6,10 @@ globals:
 
 env:
   jest: true
+  browser: true
 
+parser: babel-eslint
+settings:
+  import/resolver:
+    node:
+      map: ['@', './example']
