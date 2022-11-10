@@ -1,9 +1,10 @@
 ---
 extends: eslint-config-shakacode/base
+rules:
+  import/no-unresolved: off
 
 globals:
   __DEBUG__: true
 
 env:
   jest: true
-
