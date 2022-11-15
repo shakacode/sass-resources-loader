@@ -1,2 +1,4 @@
 ---
 extends: eslint-config-shakacode
+rules:
+  import/no-unresolved: off
