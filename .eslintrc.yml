@@ -5,4 +5,6 @@ globals:
   __DEBUG__: true
 
 env:
+  browser: true
+  node: true
   jest: true

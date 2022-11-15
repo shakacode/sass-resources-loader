@@ -1,2 +1,6 @@
 ---
 extends: eslint-config-shakacode
+
+env:
+  browser: true
+  node: true
