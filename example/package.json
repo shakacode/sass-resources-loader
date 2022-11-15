@@ -33,7 +33,7 @@
     "mini-css-extract-plugin": "^0.9.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "express": "^4.13.4",
+    "express": "^4.18.2",
     "webpack": "4.44.1",
     "body-parser": "^1.14.2",
     "webpack-dev-middleware": "^3.7.0",
