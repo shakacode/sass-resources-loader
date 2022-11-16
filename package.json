@@ -41,7 +41,7 @@
     "async": "^3.2.4",
     "chalk": "^4.1.0",
     "glob": "^8.0.3",
-    "loader-utils": "^2.0.0"
+    "loader-utils": "^2.0.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",
