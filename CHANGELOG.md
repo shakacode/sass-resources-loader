@@ -5,9 +5,6 @@ _For commits on master, but not yet pushed to NPM._
   - async to v3.2.4;
   - glob to v8.0.3.
 
-* Update README.md [#169](https://github.com/shakacode/sass-resources-loader/commit/167a90660e473da0b1dc8ab5f783dc8780f1cd49) by [Eugene Mikhaylov](https://github.com/LewWadoo).
-* Update CONTRIBUTING.md [#170](https://github.com/shakacode/sass-resources-loader/commit/363d6ec3261fe8cbdf8a2ac3e1213c0088e1bcf9) by [Eugene Mikhaylov](https://github.com/LewWadoo).
-
 ## [2.2.5] - 2022-04-14
 * Update async to v3.2.3. [#154](https://github.com/shakacode/sass-resources-loader/pull/154) by [Ian Hutchinson](https://github.com/ian-hutchinson).
 
