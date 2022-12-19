@@ -1,6 +1,9 @@
 # Change Log
 ## [Unreleased]
 _For commits on master, but not yet pushed to NPM._
+* Update dependencies [#163](https://github.com/shakacode/sass-resources-loader/pull/163) by [Eugene Mikhaylov](https://github.com/LewWadoo):
+  - async to v3.2.4;
+  - glob to v8.0.3.
 
 ## [2.2.5] - 2022-04-14
 * Update async to v3.2.3. [#154](https://github.com/shakacode/sass-resources-loader/pull/154) by [Ian Hutchinson](https://github.com/ian-hutchinson).
