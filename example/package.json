@@ -30,11 +30,11 @@
   ],
   "dependencies": {
     "cross-env": "^7.0.2",
-    "mini-css-extract-plugin": "^0.9.0",
+    "mini-css-extract-plugin": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "express": "^4.17.3",
-    "webpack": "4.44.1",
+    "webpack": "5.0.0",
     "body-parser": "^1.19.2",
     "webpack-dev-middleware": "^3.7.0",
     "webpack-hot-middleware": "^2.14.0"
