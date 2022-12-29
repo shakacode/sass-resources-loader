@@ -37,7 +37,7 @@
     "webpack": "4.44.1",
     "body-parser": "^1.19.2",
     "webpack-dev-middleware": "^3.7.0",
-    "webpack-hot-middleware": "^2.14.0"
+    "webpack-hot-middleware": "^2.25.3"
   },
   "devDependencies": {
     "@babel/core": "^7.19.3",
