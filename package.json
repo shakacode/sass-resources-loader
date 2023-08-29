@@ -57,7 +57,10 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "jest": "^26.2.2",
     "raw-loader": "^4.0.2",
-    "webpack": "^4.44.1",
+    "webpack": "^4.46.0",
     "webpack-merge": "^5.8.0"
+  },
+  "resolutions": {
+    "glob-parent": ">=5.1.2"
   }
 }
