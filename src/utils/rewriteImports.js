@@ -22,7 +22,6 @@ export default function rewriteImports(error, file, contents, moduleContext, cal
     return callback(null, contents);
   }
 
-
   const rewritten = contents.replace(importRegexp, (entire, single, double, unquoted) => {
     const oldImportPath = single || double || unquoted;
 
