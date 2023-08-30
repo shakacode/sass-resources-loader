@@ -1,5 +1,7 @@
 ---
-extends: eslint-config-shakacode/base
+# This needs to be commented to avoid conflict with the same config in the example app
+# extends: eslint-config-shakacode/base
+
 rules:
   import/no-unresolved: off
 
