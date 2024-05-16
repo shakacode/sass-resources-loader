@@ -344,6 +344,11 @@ _sass-resources-loader_ is available under MIT. See [LICENSE](LICENSE) for more 
     <img alt="ScoutAPM" src="https://user-images.githubusercontent.com/4244251/184881152-9f2d8fba-88ac-4ba6-873b-22387f8711c5.png" height="120px">
   </picture>
 </a>
+<a href="https://shakacode.controlplane.com">
+  <picture>
+    <img alt="Control Plane" src="https://github.com/shakacode/.github/assets/20628911/90babd87-62c4-4de3-baa4-3d78ef4bec25" height="120px">
+  </picture>
+</a>
 <br />
 <a href="https://www.browserstack.com">
   <picture>
@@ -357,6 +362,9 @@ _sass-resources-loader_ is available under MIT. See [LICENSE](LICENSE) for more 
 </a>
 <a href="https://www.honeybadger.io">
   <img src="https://user-images.githubusercontent.com/4244251/184881133-79ee9c3c-8165-4852-958e-31687b9536f4.png" alt="Honeybadger" height="55px">
+</a>
+<a href="https://reviewable.io">
+  <img src="https://user-images.githubusercontent.com/20628911/230848305-c94510a4-82d7-468f-bf9f-eeb81d3f2ce0.png" alt="Reviewable" height="55px">
 </a>
 
 <br />
