@@ -5,7 +5,7 @@ export default (context) => {
     resources = undefined,
     hoistUseStatements = false,
     ...rest
-  } = loaderUtils.getOptions(context) || {};
+  } = context.getOptions() || {};
 
   return {
     resources,
