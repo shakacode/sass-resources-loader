@@ -1,5 +1,3 @@
-import loaderUtils from 'loader-utils';
-
 export default (context) => {
   const {
     resources = undefined,
