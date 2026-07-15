@@ -149,20 +149,7 @@ div {
 `;
 
 exports[`sass-resources-loader resources should parse array resources 1`] = `
-"@use 'shared/index' as secret;
-@import 'shared/variables';
-
-@forward \\"variables\\";
-
-@use \\"sass:math\\";
-
-$padding: #{math.div(4 / 2)}px;
-
-@use 'sass:math';
-
-$padding: #{math.div(4 / 2)}px;
-
-$text-color: $ccc;
+"$text-color: $ccc;
 
 @mixin my-mixin {
     background-color: gray;
@@ -172,6 +159,19 @@ $text-color: $ccc;
 @function always-blue() {
     @return blue;
 }
+
+@use 'sass:math';
+
+$padding: #{math.div(4 / 2)}px;
+
+@use \\"sass:math\\";
+
+$padding: #{math.div(4 / 2)}px;
+
+@forward \\"variables\\";
+
+@use 'shared/index' as secret;
+@import 'shared/variables';
 
 "
 `;
